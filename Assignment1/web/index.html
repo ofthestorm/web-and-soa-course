@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>music</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="dist/jquery.tubeplayer.min.js"></script>
+</head>
+<body>
+<div id="youtube-player"></div>
+<script src="../resources/js/jquery-3.2.1.js"></script>
+<script src="../resources/js/jquery.tubeplayer.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        window.$player = jQuery("#youtube-player").tubeplayer({
+            width: 1280,
+            height: 720,
+            initialVideo: "DkoeNLuMbcI",
+            onPlayerLoaded: function(){
+                this.tubeplayer("volume", 25);
+                this.tubeplayer("seek", "1:33"); // Jump to T.I.
+            },
+            onPlayerEnded: function(){
+                alert("that was awesome!");
+            }
+        });
+    });
+</script>
+</body>
+</html>

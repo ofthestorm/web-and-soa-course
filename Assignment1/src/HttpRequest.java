@@ -105,3 +105,7 @@ public class HttpRequest {
         System.out.println(funburst);
     }
 }
+
+//todo: 解析XML Json
+//todo: 怎么把数据展示到网页里
+//todo: athu怎么动态获得

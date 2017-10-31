@@ -2,7 +2,9 @@
  * Created by keke on 2017/10/29.
  */
 
-jQuery(document).ready(function(){
+;jQuery(document).ready(function(){
+
+    //Tikku
     window.$player = jQuery("#youtube-player").tubeplayer({
         width: 1280,
         height: 720,
@@ -15,10 +17,32 @@ jQuery(document).ready(function(){
             alert("that was awesome!");
         }
     });
+
+    //fullpage
     $('#fullpage').fullpage({
-        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+        sectionsColor: ['white', 'white', 'white', 'white'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage'],
         menu: '#menu',
         scrollingSpeed: 1000
     });
+
+    //mouse over the track
+    $(".track").hover(function(){
+        $(this).find(".track-hover").show();
+    },function(){
+        $(this).find(".track-hover").hide();
+    });
+
+    $(".event").hover(function(){
+        console.log("hover");
+        $(this).find(".event-hover")
+            .removeClass("animated zoomOut")
+            .addClass("animated zoomIn")
+            .show();
+    },function(){
+        $(this).find(".event-hover")
+            .removeClass("animated zoomIn")
+            .addClass("animated zoomOut");
+    });
+
 });

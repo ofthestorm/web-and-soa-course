@@ -1,5 +1,10 @@
 @CHARSET "utf-8";
 
+@font-face {
+    font-family: ArchivoBlack;
+    src: url('../fonts/ArchivoBlack-Regular.ttf');
+}
+
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
     padding: 0;
@@ -59,6 +64,7 @@ h1{
 }
 p{
     font-size: 2em;
+    /*font-family: Helvetica;*/
 }
 .intro p{
     width: 50%;
@@ -234,3 +240,128 @@ p{
     z-index: 999;
 }
 
+.intro p{
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1.5em;
+}
+
+.kite-color {
+    /*background-color: #1f6377;*/
+    /*border: solid white 1px;*/
+
+}
+
+
+
+
+.track-content {
+    width: 87%;
+    margin: 0 auto;
+}
+
+.track {
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+    margin: 0 auto;
+    position: relative;
+}
+
+.track-hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200px;
+    width: 200px;
+    /*background-color: black;*/
+    /*opacity: 0.9;*/
+    background: rgba(0,0,0,0.8);
+    z-index: 2;
+    display: none;
+    text-align: center;
+    box-sizing:border-box;
+    padding: 20px 5px;
+
+}
+
+.track-hover p {
+    opacity: 1;
+    /*font-family: Helvetica;*/
+    /*width:100%;*/
+    /*height:100%;*/
+    /*vertical-align:middle;*/
+}
+
+.track-name {
+    color: white;
+    font-size: 25px;
+    font-family: ArchivoBlack;
+}
+
+.track-artist {
+    color: rgb(37, 193, 89);
+    font-size: 15px;
+    font-family: Helvetica;
+}
+
+.track-time {
+    /*color: #0F9E5E;*/
+    color: gray;
+    font-size: 15px;
+    font-family: Helvetica;
+}
+
+
+.event-content {
+    width: 85%;
+    margin: 0 auto;
+}
+.event {
+    height: 200px;
+    width: 200px;
+    background: rgba(0,0,128,0.7);
+    margin: 0 auto;
+    position: relative;
+}
+
+.event-hover {
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200px;
+    width: 200px;
+    /*background-color: black;*/
+    /*opacity: 0.9;*/
+    background: rgba(70,130,180,0.9);
+    z-index: 2;
+    display: none;
+    text-align: center;
+    box-sizing:border-box;
+    /*padding: 5px;*/
+
+    /*word-wrap: break-word;*/
+    /*overflow: hidden;*/
+    /*word-break:break-all;*/
+    /*word-wrap:break-word;*/
+}
+
+.event-hover p {
+    margin: 0;
+    font-size: 14px;
+    /*font-family: Helvetica;*/
+}
+
+.artist-content {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.artist {
+    background-color: #0F9E5E;
+    width: 150px;
+    height: 150px;
+    border:1px #0F9E5E solid;
+    border-radius:75px;
+}

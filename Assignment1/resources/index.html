@@ -8,40 +8,6 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/hover.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/animate.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/style.css"/>
-    <style>
-
-        #section0{
-            /*color: white;*/
-            background-image: url(../resources/img/yaroslav-blokhin-341149.jpg);
-            padding: 6% 0 0 0;
-            /*background-repeat:no-repeat;*/
-            background-size:100% 100%;
-            -moz-background-size:100% 100%;
-        }
-        #section0 h1 {
-            color: white;
-        }
-        #section0 p {
-            color: white;
-        }
-
-        #section2{
-            /*color: white;*/
-            background-image: url(../resources/img/firza-pratama-376622.jpg);
-            padding: 6% 0 0 0;
-            /*background-repeat:no-repeat;*/
-            background-size:100% 100%;
-            -moz-background-size:100% 100%;
-        }
-        #section2 h1 {
-            color: white;
-        }
-        #section2 p {
-            color: white;
-        }
-
-
-    </style>
 
 </head>
 <body>
@@ -51,8 +17,8 @@
 <div id="fullpage">
     <div class="section" id="section0">
         <div class="intro">
-            <h1>Example</h1>
-            <p>HTML markup example to define 4 sections.</p>
+            <h1>Welcome</h1>
+            <p>It's a world all about music! Have fun! </p>
         </div>
     </div>
     <div class="section " id="section1">
@@ -129,10 +95,10 @@
 
     </div>
 
-    <div class="section active" id="section2">
+    <div class="section" id="section2">
         <div class="slide">
             <div class="intro">
-                <h1>Find activities interest you</h1>
+                <h1>Activities</h1>
                 <p>All kinds of concert, live show, and outdoor music festival for you to choose.</p>
                 <br/><br/><br/><br/><br/><br/>
                 <div class="event-content">
@@ -140,7 +106,7 @@
                         <div class="kite__item kite-color">
                             <div class="event">
                                 <div class="event-hover">
-                                    <p>题主这个问题我也遇到了，然后搜索一下就发现这个提问了。当时我用的纯数字还有纯字母测试的，发现不换行。后来换成单词或者汉字就OK了。好像是因为浏览器会把纯数字或者纯字母看作很长很长的单词，想让单词在没显示完全之前就换行只能在css里面添加word-wrap:break-word;了。iondescripitsc ripitiondescripi tiondescripit</p>
+                                    <p>题主这个问题我也遇到了，然后搜索一下就scripit</p>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +134,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="slide">
@@ -187,19 +152,25 @@
     </div>
 
 
-    <div class="section" id="section3">
+    <div class="section active" id="section3">
         <div class="intro">
             <h1>Artists</h1>
-            <p>Here are the most popular artists. Which is your favourite one?
+            <p>Here are the most popular artists. Do you know all of them? And which is your favourite one?
             </p>
             <div class="artist-content">
                 <div class="kite kite--fill kite--full is-equalize">
                     <div class="kite__item">
                         <div class="artist">
+                            <div class="artist-hover">
+                                <p class="artist-name">Name</p>
+                            </div>
                         </div>
                     </div>
                     <div class="kite__item">
                         <div class="artist">
+                            <div class="artist-hover">
+
+                            </div>
                         </div>
                     </div>
                     <div class="kite__item">
@@ -278,6 +249,13 @@
     </div>
 
 </div>
+
+    <div class="section" id="section4">
+        <div class="intro">
+            <h1>Want more? </h1>
+            <p>Try to search for your interested artist.</p>
+        </div>
+    </div>
 
 <script src="../resources/js/jquery-3.2.1.js"></script>
 <script src="../resources/js/jquery.fullpage.min.js"></script>

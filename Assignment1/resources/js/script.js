@@ -34,7 +34,7 @@
     });
 
     $(".event").hover(function(){
-        console.log("hover");
+        // console.log("hover");
         $(this).find(".event-hover")
             .removeClass("animated zoomOut")
             .addClass("animated zoomIn")
@@ -43,6 +43,18 @@
         $(this).find(".event-hover")
             .removeClass("animated zoomIn")
             .addClass("animated zoomOut");
+    });
+
+    $(".artist").hover(function(){
+        // console.log("hover");
+        $(this).find(".artist-hover")
+            .removeClass("animated rotateOut")
+            .addClass("animated rotateIn")
+            .show();
+    },function(){
+        $(this).find(".artist-hover")
+            .removeClass("animated rotateIn")
+            .addClass("animated rotateOut")
     });
 
 });

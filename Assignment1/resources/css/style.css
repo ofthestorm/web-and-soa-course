@@ -4,6 +4,27 @@
     font-family: ArchivoBlack;
     src: url('../fonts/ArchivoBlack-Regular.ttf');
 }
+@font-face {
+    font-family: Candal;
+    src: url('../fonts/Candal.ttf');
+}
+@font-face {
+    font-family: JosefinSans;
+    src: url('../fonts/JosefinSans-Bold.ttf');
+}
+@font-face {
+    font-family: JosefinSans-Light;
+    src: url('../fonts/JosefinSans-Light.ttf');
+}
+
+@font-face {
+    font-family: ReemKufi;
+    src: url('../fonts/ReemKufi-Regular.ttf');
+}
+@font-face {
+    font-family: WorkSans;
+    src: url('../fonts/WorkSans-Light.ttf');
+}
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
@@ -61,10 +82,12 @@ body{
 }
 h1{
     font-size: 6em;
+    font-family: JosefinSans;
 }
 p{
     font-size: 2em;
-    /*font-family: Helvetica;*/
+    font-family: JosefinSans-Light;
+
 }
 .intro p{
     width: 50%;
@@ -240,6 +263,9 @@ p{
     z-index: 999;
 }
 
+
+
+
 .intro p{
     width: 50%;
     margin: 0 auto;
@@ -263,7 +289,7 @@ p{
 .track {
     height: 200px;
     width: 200px;
-    background-color: yellow;
+    background-color: #EBF5EE;
     margin: 0 auto;
     position: relative;
 }
@@ -287,7 +313,7 @@ p{
 
 .track-hover p {
     opacity: 1;
-    /*font-family: Helvetica;*/
+    /*font-family: Limelight;*/
     /*width:100%;*/
     /*height:100%;*/
     /*vertical-align:middle;*/
@@ -302,14 +328,14 @@ p{
 .track-artist {
     color: rgb(37, 193, 89);
     font-size: 15px;
-    font-family: Helvetica;
+    font-family: WorkSans;
 }
 
 .track-time {
     /*color: #0F9E5E;*/
     color: gray;
     font-size: 15px;
-    font-family: Helvetica;
+    font-family: ReemKufi;
 }
 
 
@@ -334,20 +360,16 @@ p{
     width: 200px;
     /*background-color: black;*/
     /*opacity: 0.9;*/
-    background: rgba(70,130,180,0.9);
+    background: rgba(214,230,242,0.9);
     z-index: 2;
     display: none;
     text-align: center;
     box-sizing:border-box;
-    /*padding: 5px;*/
-
-    /*word-wrap: break-word;*/
-    /*overflow: hidden;*/
-    /*word-break:break-all;*/
-    /*word-wrap:break-word;*/
 }
 
 .event-hover p {
+    width: 200px;
+    height: 200px;
     margin: 0;
     font-size: 14px;
     /*font-family: Helvetica;*/
@@ -359,9 +381,121 @@ p{
 }
 
 .artist {
-    background-color: #0F9E5E;
+    background-color: #F5FEFF;
     width: 150px;
     height: 150px;
-    border:1px #0F9E5E solid;
+    /*border:1px #0F9E5E solid;*/
     border-radius:75px;
+    position: relative;
+}
+
+.artist-hover {
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 150px;
+    /*border:1px #DC552C solid;*/
+    border-radius:75px;
+    /*background: rgba(220,85,44,1);*/
+    background: rgba(189,228,244,1);
+    z-index: 2;
+    display: none;
+    text-align: center;
+    box-sizing:border-box;
+}
+
+.artist-name {
+    /*color: white;*/
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    margin: 0;
+    font-size: 20px;
+    font-family: Candal; !important;
+}
+
+/*************************************************************/
+
+#section0{
+    /*color: white;*/
+    background-image: url(../img/yaroslav-blokhin-341149.jpg);
+    padding: 6% 0 0 0;
+    /*background-repeat:no-repeat;*/
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
+#section0 h1 {
+    color: white;
+}
+#section0 p {
+    color: white;
+}
+
+/*************************************************************/
+#section1{
+}
+#section1 h1 {
+    color: #921224;
+}
+#section1 p {
+    /*color: #BCE0DA;*/
+}
+
+/*************************************************************/
+#section2{
+    /*color: white;*/
+    background-image: url(../img/firza-pratama-376622.jpg);
+    padding: 6% 0 0 0;
+    /*background-repeat:no-repeat;*/
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
+#section2 h1 {
+    color: #FFF200;
+}
+#section2 p {
+    color: white;
+}
+
+/*************************************************************/
+
+#section3{
+    /*color: white;*/
+    /*background-image: url(../img/firza-pratama-376622.jpg);*/
+    /*padding: 6% 0 0 0;*/
+    /*!*background-repeat:no-repeat;*!*/
+    /*background-size:100% 100%;*/
+    /*-moz-background-size:100% 100%;*/
+}
+#section3 h1 {
+    color: #404969;
+
+}
+#section3 p {
+    color: #DC552C;
+}
+
+.artist-name {
+    font-family: Candal;
+}
+
+/*************************************************************/
+
+#section4{
+    /*color: white;*/
+    background-image: url(../img/yannis-papanastasopoulos-327476.jpg);
+    padding: 6% 0 0 0;
+    /*background-repeat:no-repeat;*/
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
+#section4 h1 {
+    color: #B30753;
+    /*font-size: 80px;*/
+}
+
+#section4 p {
+    color: #F6C667;
 }

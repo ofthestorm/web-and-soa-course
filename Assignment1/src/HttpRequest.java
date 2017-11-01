@@ -1,14 +1,18 @@
 /**
  * Created by keke on 2017/10/29.
  */
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import org.dom4j.*;
+
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.json.*;
+
+
+
 
 public class HttpRequest {
 
@@ -67,32 +71,32 @@ public class HttpRequest {
         //发送 GET 请求
 
         // http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=spain&limit=10&api_key=db69e6a6c0807bd304c1a3d18c2e320d
-        String lastfm = HttpRequest.sendGet(
-                "http://ws.audioscrobbler.com/2.0/",
-                "method=geo.gettopartists&country=spain&limit=10&api_key=db69e6a6c0807bd304c1a3d18c2e320d",
-                false
-        );
-        System.out.println("------------------Last.fm------------------");
-        System.out.println(lastfm);
+//        String lastfm = HttpRequest.sendGet(
+//                "http://ws.audioscrobbler.com/2.0/",
+//                "method=geo.gettopartists&country=spain&limit=18&api_key=db69e6a6c0807bd304c1a3d18c2e320d",
+//                false
+//        );
+//        System.out.println("------------------Last.fm------------------");
+//        System.out.println(lastfm);
 
 
         //http://api.eventful.com/rest/events/search?&app_key=rW4qKDMtCDgN8q5m&keywords=music&location=Shanghai&date=Future&page_size=10
-        String eventful = HttpRequest.sendGet(
-                "http://api.eventful.com/rest/events/search",
-                "app_key=rW4qKDMtCDgN8q5m&keywords=music&location=Shanghai&date=Future&page_size=10",
-                false
-        );
-        System.out.println("------------------Eventful------------------");
-        System.out.println(eventful);
+//        String eventful = HttpRequest.sendGet(
+//                "http://api.eventful.com/rest/events/search",
+//                "app_key=rW4qKDMtCDgN8q5m&keywords=music&location=Shanghai&date=Future&page_size=5",
+//                false
+//        );
+//        System.out.println("------------------Eventful------------------");
+//        System.out.println(eventful);
 
         //https://api.spotify.com/v1/browse/new-releases?country=US
-        String spotify = HttpRequest.sendGet(
-                "https://api.spotify.com/v1/browse/new-releases",
-                "country=US",
-                true
-        );
-        System.out.println("------------------Spotify------------------");
-        System.out.println(spotify);
+//        String spotify = HttpRequest.sendGet(
+//                "https://api.spotify.com/v1/browse/new-releases",
+//                "country=US",
+//                true
+//        );
+//        System.out.println("------------------Spotify------------------");
+//        System.out.println(spotify);
 
        // https://api.fanburst.com/tracks/trending?client_id=f6e76d71-bfd2-4a7f-bee6-f91db6fb33f5
         //返回500条
@@ -101,11 +105,63 @@ public class HttpRequest {
                 "client_id=f6e76d71-bfd2-4a7f-bee6-f91db6fb33f5",
                 false
         );
-        System.out.println("------------------Funburst------------------");
-        System.out.println(funburst);
+//        System.out.println("------------------Funburst------------------");
+//        System.out.println(funburst);
+
+//event
+//        try {
+//            Document document = DocumentHelper.parseText(eventful);
+//
+//            Element eventful_root = document.getRootElement();
+//            Element eventful_events = eventful_root.element("events");
+//
+//            for (Iterator<Element> it = eventful_events.elementIterator(); it.hasNext();) {
+//                Element eventful_event = it.next();
+//
+//                String eventful_title = eventful_event.element("title").getText();
+//                String eventful_time = eventful_event.element("start_time").getText();
+//                String eventful_address = eventful_event.element("venue_name").getText();
+//                String eventful_url = eventful_event.element("url").getText();
+//
+//
+//                System.out.println(eventful_title);
+//                System.out.println(eventful_time);
+//                System.out.println(eventful_address);
+//                System.out.println(eventful_url);
+//
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+        //lastfm
+//        try {
+//            Document document = DocumentHelper.parseText(lastfm);
+//
+//            Element lastfm_root = document.getRootElement();
+//            Element lastfm_topartists = lastfm_root.element("topartists");
+//
+//            for (Iterator<Element> it = lastfm_topartists.elementIterator(); it.hasNext();) {
+//                Element lastfm_artist = it.next();
+//
+//                String lastfm_name = lastfm_artist.element("name").getText();
+//                String lastfm_image = lastfm_artist.element("image").getText();
+//                String lastfm_url = lastfm_artist.element("url").getText();
+//
+//                lastfm_image = lastfm_image.replaceAll("34s", "174s");
+//
+//                System.out.println(lastfm_name);
+//                System.out.println(lastfm_image);
+//                System.out.println(lastfm_url);
+//
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+
+
+
     }
 }
 
-//todo: 解析XML Json
-//todo: 怎么把数据展示到网页里
-//todo: athu怎么动态获得

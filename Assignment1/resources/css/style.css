@@ -389,6 +389,13 @@ p{
     position: relative;
 }
 
+.artist img {
+    width: 150px;
+    height: 150px;
+    /*border:1px white solid;*/
+    border-radius:75px;
+}
+
 .artist-hover {
     padding: 0;
     position: absolute;
@@ -396,7 +403,7 @@ p{
     top: 0;
     width: 150px;
     height: 150px;
-    /*border:1px #DC552C solid;*/
+    /*border: 5px rgb(189,228,0) solid;*/
     border-radius:75px;
     /*background: rgba(220,85,44,1);*/
     background: rgba(189,228,244,1);

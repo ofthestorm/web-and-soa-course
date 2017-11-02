@@ -1,11 +1,14 @@
 /**
  * Created by keke on 2017/10/29.
  */
+import com.google.gson.*;
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import org.dom4j.*;
 
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -159,9 +162,24 @@ public class HttpRequest {
 //            e.printStackTrace();
 //        }
 //
+        Gson gson = new Gson();
+        JsonParser parser = new JsonParser();
+        JsonArray Jarray = parser.parse(funburst).getAsJsonArray();
 
+        ArrayList<Track> trackList = new ArrayList<>();
+//        JsonObject returnData = new JsonParser().parse(funburst).getAsJsonObject();
+        for (JsonElement t : Jarray) {
+            //使用GSON，直接转成Bean对象
+            Track track = gson.fromJson(t, Track.class);
+            trackList.add(track);
 
+//            Track.Images i = new Track.Images();
+//            String w = i.square_500;
+//            System.out.println(w);
+//            System.out.print(track.published_at);
 
+            System.out.println(track.images.square_500);
+        }
     }
 }
 

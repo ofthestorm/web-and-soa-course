@@ -57,5 +57,4 @@ public class Servlet extends HttpServlet {
         doGet(request, response);
 
     }
-
 }

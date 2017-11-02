@@ -8,10 +8,8 @@ import org.dom4j.*;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 import org.json.*;
 
 
@@ -178,8 +176,12 @@ public class HttpRequest {
 //            System.out.println(w);
 //            System.out.print(track.published_at);
 
-            System.out.println(track.images.square_500);
+            System.out.println(track.getImages().getSquare_500());
         }
+
+
     }
+
+
 }
 

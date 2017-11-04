@@ -34,13 +34,14 @@
 <div id="fullpage">
   <div class="section" id="section0">
     <div class="intro">
-      <h1>Welcome</h1>
-      <p>It's a world all about music! Have fun! </p>
+      <h1 class="section0h">Welcome</h1>
+      <p class="section0p">It's a world all about music! Have fun! </p>
     </div>
   </div>
+
   <div class="section" id="section1">
-    <h1>Discover more music</h1>
-    <p>Get tired of pop music? Try listening to these increasingly popular tracks created by indie musician.</p>
+    <h1 class="section1h">Discover more music</h1>
+    <p class="section1p">Get tired of pop music? Try listening to these increasingly popular tracks created by indie musician.</p>
     <br/>
     <div class="track-content">
       <div class="kite kite--fill kite--full is-equalize">
@@ -85,8 +86,8 @@
   <div class="section" id="section2">
     <div class="slide">
       <div class="intro">
-        <h1>Activities</h1>
-        <p>All kinds of concert, live show, and outdoor music festival for you to choose.</p>
+        <h1 class="section2h">Activities</h1>
+        <p class="section2p">All kinds of concert, live show, and outdoor music festival for you to choose.</p>
         <br/><br/><br/><br/><br/><br/>
         <div class="event-content">
           <div class="kite kite--fill kite--full is-equalize">
@@ -94,7 +95,9 @@
             <div class="kite__item kite-color">
               <div class="event">
                 <p class="event-name"><% out.print(eventList.get(i).getTitle()); %></p>
+                <br/>
                 <p class="event-time"><% out.print(eventList.get(i).getStart_time()); %></p>
+                <br/>
                 <p class="event-address"><% out.print(eventList.get(i).getVenue_name()); %></p>
                 <div class="event-hover">
                   <p class="event-description"><% out.print(eventList.get(i).getDescription()); %></p>
@@ -121,11 +124,10 @@
 
   </div>
 
-
   <div class="section" id="section3">
     <div class="intro">
-      <h1>Artists</h1>
-      <p>Here are the most popular artists. Do you know all of them? And which is your favourite one?
+      <h1 class="section3h">Artists</h1>
+      <p class="section3p">Here are the most popular artists. Do you know all of them? And which is your favourite one?
       </p>
       <div class="artist-content">
         <div class="kite kite--fill kite--full is-equalize">
@@ -174,8 +176,8 @@
 
   <div class="section" id="section4">
     <div class="intro">
-      <h1>Want more? </h1>
-      <p>Try to search for your interested artist.</p>
+      <h1 class="section4h">Want more? </h1>
+      <p class="section4p">Try to search for your interested artist.</p>
     </div>
   </div>
 </div>

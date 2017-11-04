@@ -281,6 +281,29 @@ p{
 
 
 
+
+
+
+
+/*************************************************************/
+
+#section0{
+    /*color: white;*/
+    background-image: url(../img/yaroslav-blokhin-341149.jpg);
+    padding: 6% 0 0 0;
+    /*background-repeat:no-repeat;*/
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
+.section0h {
+    color: white;
+}
+.section0p {
+    color: white;
+}
+
+/*todo:Track************************************************************/
+
 .track-content {
     width: 87%;
     margin: 0 auto;
@@ -343,6 +366,16 @@ p{
     font-family: ReemKufi;
 }
 
+#section1{
+}
+.section1h {
+    color: #921224;
+}
+.section1p {
+    /*color: #BCE0DA;*/
+}
+
+/*todo:Event************************************************************/
 
 .event-content {
     width: 85%;
@@ -358,8 +391,9 @@ p{
     padding: 10px;
 }
 .event p {
-    height: 180px;
+    /*height: 180px;*/
     width: 180px;
+    font-size: 14px;
 }
 
 .event-hover {
@@ -384,9 +418,45 @@ p{
     height: 180px;
     margin: 0;
     font-size: 14px;
-    /*font-family: Helvetica;*/
+    font-family: WorkSans;
 }
 
+.event-name {
+    font-family: ArchivoBlack;
+    font-size: 15px;
+    color: white; !important;
+}
+.event-time {
+    font-size: 12px;
+    font-family: WorkSans;
+    color: white;!important;
+}
+.event-address {
+    font-size: 12px;
+    font-family: WorkSans;
+    color: white;!important;
+}
+.event-description {
+    color: black;!important;
+}
+
+#section2{
+    /*color: white;*/
+    background-image: url(../img/firza-pratama-376622.jpg);
+    padding: 6% 0 0 0;
+    /*background-repeat:no-repeat;*/
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
+.section2h {
+    color: white;
+}
+.section2p {
+    color: #FFF200;
+}
+
+
+/*todo: Artist************************************************************/
 .artist-content {
     width: 85%;
     margin: 0 auto;
@@ -421,99 +491,35 @@ p{
     background: rgb(189,228,244);
     z-index: 2;
     display: none;
-    text-align: center;
-    box-sizing:border-box;
+    /*text-align: center;*/
+    /*box-sizing:border-box;*/
 }
 
 .artist-name {
     /*color: white;*/
-    width: 150px;
+    /*width: 150px;*/
     height: 150px;
     line-height: 150px;
     margin: 0;
-    font-size: 20px;
+    font-size: 10px; !important;
     font-family: Candal; !important;
+    color: #DC552C;
+    white-space: nowrap;
 }
 
-/*************************************************************/
-
-#section0{
-    /*color: white;*/
-    background-image: url(../img/yaroslav-blokhin-341149.jpg);
-    padding: 6% 0 0 0;
-    /*background-repeat:no-repeat;*/
-    background-size:100% 100%;
-    -moz-background-size:100% 100%;
-}
-#section0 h1 {
-    color: white;
-}
-#section0 p {
-    color: white;
-}
-
-/*************************************************************/
-#section1{
-}
-#section1 h1 {
-    color: #921224;
-}
-#section1 p {
-    /*color: #BCE0DA;*/
-}
-
-/*************************************************************/
-#section2{
-    /*color: white;*/
-    background-image: url(../img/firza-pratama-376622.jpg);
-    padding: 6% 0 0 0;
-    /*background-repeat:no-repeat;*/
-    background-size:100% 100%;
-    -moz-background-size:100% 100%;
-}
-#section2 h1 {
-    color: #FFF200;
-}
-#section2 p {
-    color: white;
-}
-.event-name {
-    font-family: ArchivoBlack;
-    font-size: 15px;
-}
-.event-time {
-    font-size: 12px;
-    font-family: WorkSans;
-}
-.event-address {
-    font-size: 12px;
-    font-family: WorkSans;
-}
-.event-description {
-    color: black;
-}
-
-/*************************************************************/
 
 #section3{
-    /*color: white;*/
-    /*background-image: url(../img/firza-pratama-376622.jpg);*/
-    /*padding: 6% 0 0 0;*/
-    /*!*background-repeat:no-repeat;*!*/
-    /*background-size:100% 100%;*/
-    /*-moz-background-size:100% 100%;*/
+
 }
-#section3 h1 {
+.section3h {
     color: #404969;
 
 }
-#section3 p {
+.section3p {
     color: #DC552C;
 }
 
-.artist-name {
-    font-family: Candal;
-}
+
 
 /*************************************************************/
 
@@ -526,11 +532,11 @@ p{
     -moz-background-size:100% 100%;
 }
 
-#section4 h1 {
+.section4h {
     color: #B30753;
     /*font-size: 80px;*/
 }
 
-#section4 p {
+.section4p {
     color: #F6C667;
 }

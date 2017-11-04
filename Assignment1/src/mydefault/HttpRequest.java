@@ -86,8 +86,10 @@ public class HttpRequest {
                 String eventful_time = eventful_event.element("start_time").getText();
                 String eventful_address = eventful_event.element("venue_name").getText();
                 String eventful_url = eventful_event.element("url").getText();
+                String eventful_description = eventful_event.element("description").getText();
 
-                Event event = new Event(eventful_title, eventful_time, eventful_address, eventful_url);
+
+                Event event = new Event(eventful_title, eventful_time, eventful_address, eventful_url, eventful_description);
 
                 events.add(event);
             }

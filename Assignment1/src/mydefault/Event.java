@@ -7,17 +7,19 @@ public class Event {
     public Event() {
     }
 
-    public Event(String title, String start_time, String venue_name, String url) {
+    public Event(String title, String start_time, String venue_name, String url, String description) {
         this.title = title;
         this.start_time = start_time;
         this.venue_name = venue_name;
         this.url = url;
+        this.description = description;
     }
 
     private String title;
     private String start_time;
     private String venue_name;
     private String url;
+    private String description;
 
     public String getTitle() {
         return title;
@@ -49,5 +51,13 @@ public class Event {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

@@ -294,6 +294,11 @@ p{
     position: relative;
 }
 
+.track img {
+    height: 200px;
+    width: 200px;
+}
+
 .track-hover {
     position: absolute;
     left: 0;
@@ -302,7 +307,7 @@ p{
     width: 200px;
     /*background-color: black;*/
     /*opacity: 0.9;*/
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     z-index: 2;
     display: none;
     text-align: center;
@@ -321,7 +326,7 @@ p{
 
 .track-name {
     color: white;
-    font-size: 25px;
+    font-size: 16px;
     font-family: ArchivoBlack;
 }
 
@@ -349,6 +354,12 @@ p{
     background: rgba(0,0,128,0.7);
     margin: 0 auto;
     position: relative;
+    box-sizing:border-box;
+    padding: 10px;
+}
+.event p {
+    height: 180px;
+    width: 180px;
 }
 
 .event-hover {
@@ -360,16 +371,17 @@ p{
     width: 200px;
     /*background-color: black;*/
     /*opacity: 0.9;*/
-    background: rgba(214,230,242,0.9);
+    background: rgba(214,230,242,1);
     z-index: 2;
     display: none;
     text-align: center;
     box-sizing:border-box;
+    padding: 10px;
 }
 
 .event-hover p {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     margin: 0;
     font-size: 14px;
     /*font-family: Helvetica;*/
@@ -406,7 +418,7 @@ p{
     /*border: 5px rgb(189,228,0) solid;*/
     border-radius:75px;
     /*background: rgba(220,85,44,1);*/
-    background: rgba(189,228,244,1);
+    background: rgb(189,228,244);
     z-index: 2;
     display: none;
     text-align: center;
@@ -465,6 +477,21 @@ p{
 #section2 p {
     color: white;
 }
+.event-name {
+    font-family: ArchivoBlack;
+    font-size: 15px;
+}
+.event-time {
+    font-size: 12px;
+    font-family: WorkSans;
+}
+.event-address {
+    font-size: 12px;
+    font-family: WorkSans;
+}
+.event-description {
+    color: black;
+}
 
 /*************************************************************/
 
@@ -498,6 +525,7 @@ p{
     background-size:100% 100%;
     -moz-background-size:100% 100%;
 }
+
 #section4 h1 {
     color: #B30753;
     /*font-size: 80px;*/

@@ -188,6 +188,14 @@ public class Track {
         this.user = user;
     }
 
+    public String getDefaultImage() {
+        return images.getSquare_500();
+    }
+
+    public String getUserName() {
+        return user.getName();
+    }
+
 }
 
 

@@ -48,10 +48,11 @@
         <%for ( int i = 0; i < 5; i++){ %>
         <div class="kite__item kite-color">
           <div class="track">
+            <img src="<% out.print(trackList.get(i).getDefaultImage()); %>">
             <div class="track-hover">
               <p class="track-name"><% out.print(trackList.get(i).getTitle()); %></p>
               <br/>
-              <%--<p class="track-artist"><% out.print(trackList.get(i).getUser().getName()); %></p>--%>
+              <p class="track-artist"><% out.print(trackList.get(i).getUserName()); %></p>
               <br/>
               <p class="track-time"><% out.print(trackList.get(i).getPublished_at()); %></p>
             </div>
@@ -65,10 +66,11 @@
         <%for ( int i = 5; i < 10; i++){ %>
         <div class="kite__item kite-color">
           <div class="track">
+            <img src="<% out.print(trackList.get(i).getDefaultImage()); %>">
             <div class="track-hover">
               <p class="track-name"><% out.print(trackList.get(i).getTitle()); %></p>
               <br/>
-              <p class="track-artist"><% out.print(trackList.get(i).getUser().getName()); %></p>
+              <p class="track-artist"><% out.print(trackList.get(i).getUserName()); %></p>
               <br/>
               <p class="track-time"><% out.print(trackList.get(i).getPublished_at()); %></p>
             </div>
@@ -88,35 +90,18 @@
         <br/><br/><br/><br/><br/><br/>
         <div class="event-content">
           <div class="kite kite--fill kite--full is-equalize">
+            <%for ( int i = 0; i < 5; i++){ %>
             <div class="kite__item kite-color">
               <div class="event">
+                <p class="event-name"><% out.print(eventList.get(i).getTitle()); %></p>
+                <p class="event-time"><% out.print(eventList.get(i).getStart_time()); %></p>
+                <p class="event-address"><% out.print(eventList.get(i).getVenue_name()); %></p>
                 <div class="event-hover">
-                  <p>题主这个问题我也遇到了，然后搜索一下就scripit</p>
+                  <p class="event-description"><% out.print(eventList.get(i).getDescription()); %></p>
                 </div>
               </div>
             </div>
-            <div class="kite__item kite-color">
-              <div class="event">
-                <div class="event-hover">
-                  <p class="event-description">descripition</p>
-                </div>
-              </div>
-            </div>
-            <div class="kite__item kite-color">
-              <div class="event">
-
-              </div>
-            </div>
-            <div class="kite__item kite-color">
-              <div class="event">
-
-              </div>
-            </div>
-            <div class="kite__item kite-color">
-              <div class="event">
-
-              </div>
-            </div>
+            <%}%>
           </div>
         </div>
       </div>
@@ -129,7 +114,7 @@
     </div>
     <div class="slide">
       <div class="intro">
-        <h1>Cool</h1>
+        <h1></h1>
         <p></p>
       </div>
     </div>
@@ -144,91 +129,42 @@
       </p>
       <div class="artist-content">
         <div class="kite kite--fill kite--full is-equalize">
+          <%for ( int i = 0; i < 6; i++){ %>
           <div class="kite__item">
             <div class="artist">
-              <img src="https://lastfm-img2.akamaized.net/i/u/174s/aa9dfbdec965d751cd1fa4ec5a309299.png">
+              <img src="<% out.print(artistList.get(i).getImage()); %>">
               <div class="artist-hover">
-                <p class="artist-name">Name</p>
+                <p class="artist-name"><% out.print(artistList.get(i).getName()); %></p>
               </div>
             </div>
           </div>
+          <%}%>
+        </div>
+        <br/>
+        <div class="kite kite--fill kite--full is-equalize">
+          <%for ( int i = 6; i < 12; i++){ %>
           <div class="kite__item">
             <div class="artist">
+              <img src="<% out.print(artistList.get(i).getImage()); %>">
               <div class="artist-hover">
-
+                <p class="artist-name"><% out.print(artistList.get(i).getName()); %></p>
               </div>
             </div>
           </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
+          <%}%>
         </div>
         <br/>
         <div class="kite kite--fill kite--full is-equalize">
+          <%for ( int i = 12; i < 18; i++){ %>
           <div class="kite__item">
             <div class="artist">
+              <img src="<% out.print(artistList.get(i).getImage()); %>">
+              <div class="artist-hover">
+                <p class="artist-name"><% out.print(artistList.get(i).getName()); %></p>
+              </div>
             </div>
           </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-        </div>
-        <br/>
-        <div class="kite kite--fill kite--full is-equalize">
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
-          <div class="kite__item">
-            <div class="artist">
-            </div>
-          </div>
+          <%}%>
         </div>
         <br/>
       </div>

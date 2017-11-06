@@ -235,19 +235,26 @@
       </div>
       <br/><br/>
       <div class="result">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
         <div class="result-image">
-          <img id="result-img" src="">
+          <img id="result-img" style="width: 200px; height: 200px;" src="">
         </div>
         <div class="result-content">
-          <p class="result-property">Name</p>
-          <p class="result-value" id="result-name"></p>
-          <p class="result-property">Popularity</p>
-          <p class="result-value" id="result-popularity"></p>
-          <p class="result-property">Genres</p>
-          <p class="result-value" id="result-genres"></p>
+          <p class="result-property" id="s-name">Name</p>
+          <p class="result-value" id="result-name"> </p>
+          <p class="result-property" id="s-pop">Popularity</p>
+          <p class="result-value" id="result-popularity"> </p>
+          <p class="result-property" id="s-gen">Genres</p>
+          <p class="result-value" id="result-genres"> </p>
         </div>
       </div>
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/>
     </div>
   </div>
 </div>
@@ -255,7 +262,9 @@
 <script src="js/jquery.fullpage.min.js"></script>
 <script src="js/jquery.tubeplayer.min.js"></script>
 <script src="js/script.js"></script>
+
 <script>
+    $('.spinner').hide();
     function sendAjaxReq()
     {
         var str = document.getElementById("search-keyword").value;
@@ -267,6 +276,11 @@
             // document.getElementById("textHint").src = "";
             return;
         }
+
+        $('.result-image').hide();
+        $('.result-content').hide();
+        $('.spinner').show();
+
         if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp=new XMLHttpRequest();
@@ -281,31 +295,37 @@
             {
                 //success
                 var ajaxResult = jQuery.parseJSON(xmlhttp.responseText);
-                var name = ajaxResult.artists.items[0].name;
                 var image = ajaxResult.artists.items[0].images[1].url;
+                var name = ajaxResult.artists.items[0].name;
                 var genres = ajaxResult.artists.items[0].genres[0];
                 var popularity = ajaxResult.artists.items[0].popularity;
-                console.log(name);
+
+                document.getElementById('result-img').src = image.toString();
                 document.getElementById('result-name').innerHTML = name;
                 document.getElementById('result-popularity').innerHTML = popularity;
                 document.getElementById('result-genres').innerHTML = genres;
-                document.getElementById('result-img').src = image.toString();
+
+                document.getElementById('s-name').style.display = "block";
+                document.getElementById('s-pop').style.display = "block";
+                document.getElementById('s-gen').style.display = "block";
+
+
+                $('.spinner').hide();
+                $('.result-image').show();
+                $('.result-content').show();
+
             }
         }
 
         var url ="https://api.spotify.com/v1/search"+"?q="+str+"&type=artist&market=US&limit=1";
 
         xmlhttp.open("GET",url,true);
+
         //必须在open之后send之前!!!
-
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.setRequestHeader("Authorization", "Bearer BQCtIHJHLTclthlZjFRCQTtdyYQXBHQmcDafeoAufuU4gDFlROYoFluhc88vC6-8J285QGhyZ9-juN25TPhFUbbmbqnKlcpVVDmKS62AgNw4X_k2veEYOHr0oniMWH0n5P9Zmd3METLFatEw_BWYMIivc0t-b2g");
+        xmlhttp.setRequestHeader("Authorization", "Bearer BQDaux-BDP7g359IV0BZnnz83BWeF0qIOMfz5gRLpaADbQdOID8igETb2dv8imMNazaL18BZchIKhYN7YlS9b3CIxFWlJsiYG7ZkS-W4RKMoXduCxk_BwlSXKUmlSkzwNuzoEHAuIdZ5HvRQB2bR6RopOWNpXoQ");
 
-        // var formData = new FormData();
-        // formData.append('q', str);
-        // xmlhttp.send(formData);
         xmlhttp.send();
-
     }
 </script>
 </body>

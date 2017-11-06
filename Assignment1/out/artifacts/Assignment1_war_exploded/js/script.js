@@ -24,30 +24,6 @@
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage'],
         menu: '#menu',
         scrollingSpeed: 1000
-        // onLeave: function(index, nextIndex, direction){
-        //     // var leavingSection = $(this);
-        //     console.log(index);
-        //     if(direction == 'down') {
-        //         switch (index) {
-        //             case 1 :{
-        //                 $('.track').addClass("animated slideInUp");
-        //             } break;
-        //             case 2 :{
-        //                 $('.event').addClass("animated fadeInUp");
-        //             } break;
-        //             case 3 :{
-        //                 $('.artist').addClass("animated bounceInUp");
-        //             } break;
-        //             case 4 :{
-        //
-        //             } break;
-        //             case 5 :{
-        //
-        //             } break;
-        //
-        //         }
-        //     }
-        // }
     });
 
     //mouse over the track
@@ -81,4 +57,6 @@
             .addClass("animated rotateOut")
     });
 
+
 });
+

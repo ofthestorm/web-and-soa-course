@@ -62,8 +62,8 @@ public class SpotifyArtist {
         return this.getArtist().getItems()[0].getImages()[0].getUrl();
     }
 
-    public String getDefaultGenres() {
-        return this.getArtist().getItems()[0].getGenres()[0];
+    public String [] getDefaultGenres() {
+        return this.getArtist().getItems()[0].getGenres();
     }
 
     public int getDefaultPopularity() {

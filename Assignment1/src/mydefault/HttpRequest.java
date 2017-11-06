@@ -162,7 +162,8 @@ public class HttpRequest {
         return  trackList;
     }
 
-    public static SpotifyArtist getSpotifyArtist() {
+    //todo: 改为search
+    public static SpotifyArtist searchArtist() {
         //https://api.spotify.com/v1/browse/new-releases?country=US
         String spotify = mydefault.HttpRequest.sendGet(
                 "https://api.spotify.com/v1/search",

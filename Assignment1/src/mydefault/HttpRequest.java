@@ -29,7 +29,7 @@ public class HttpRequest {
                     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
             if(needAuth) {
                 connection.setRequestProperty("Authorization",
-                        "Bearer BQADtKcK9-4N7oliSnwDWkU5dj7jlzi4ie1hrJpTpLT_7sUrbSuVU5qbIYEXs1mX9SSBFZQpXgaNpjOeWL_chehPhsdHRNMv0LVoDFQqshlIyeaL2am0bgyRNfiF3p2u9wYEIE5lTvviindZRbzAeF36dhaoGYk");
+                        "Bearer BQCdxlSs_oczoyJXN9i__u6ONQkkoltRTklLTVTWM7oymxByCaqPALFqX3wOt8BIaUoNEWCvr4lbnAp_LiQLKsC050BzBkkNs-coSrS1DIFoUDjxUWJ9VVdvIVsV6OlP8a0u6Ak6y5RHWkWl4IuyboNLKEzDtMY");
             }
              // 建立实际的连接
             connection.connect();
@@ -162,23 +162,36 @@ public class HttpRequest {
         return  trackList;
     }
 
-    public static void main(String[] args) {
-        //发送 GET 请求
+    public static SpotifyArtist getSpotifyArtist() {
         //https://api.spotify.com/v1/browse/new-releases?country=US
-//        String spotify = mydefault.HttpRequest.sendGet(
-//                "https://api.spotify.com/v1/browse/new-releases",
-//                "country=US",
-//                true
-//        );
-//        System.out.println("------------------Spotify------------------");
+        String spotify = mydefault.HttpRequest.sendGet(
+                "https://api.spotify.com/v1/search",
+                "q=Radiohead&type=artist&market=US&limit=1",
+                true
+        );
 //        System.out.println(spotify);
-        List<Event> eventList = getEventList();
-        List<Event> artistList = getEventList();
-        List<Track> trackList = getTrackList();
 
-        System.out.println(getArtistList().get(0).getName());
-        System.out.println(getEventList().get(2).getStart_time());
-        System.out.println(getTrackList().get(6).getTitle());
+        Gson gson = new Gson();;
+        SpotifyArtist s = gson.fromJson(spotify, SpotifyArtist.class);
+        return  s;
+//        System.out.println(s.getDefaultName());
+//        System.out.println(s.getDefaultGenres());
+//        System.out.println(s.getDefaultImage());
+//        System.out.println(s.getDefaultPopularity());
+    }
+
+    public static void main(String[] args) {
+
+//        List<Event> eventList = getEventList();
+//        List<Event> artistList = getEventList();
+//        List<Track> trackList = getTrackList();
+//
+//        System.out.println(getArtistList().get(0).getName());
+//        System.out.println(getEventList().get(2).getStart_time());
+//        System.out.println(getTrackList().get(6).getTitle());
+
+
     }
 }
+
 

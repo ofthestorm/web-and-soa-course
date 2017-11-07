@@ -4,20 +4,6 @@
 
 ;jQuery(document).ready(function(){
 
-    //Tikku
-    window.$player = jQuery("#youtube-player").tubeplayer({
-        width: 1280,
-        height: 720,
-        initialVideo: "DkoeNLuMbcI",
-        onPlayerLoaded: function(){
-            this.tubeplayer("volume", 25);
-            this.tubeplayer("seek", "1:33"); // Jump to T.I.
-        },
-        onPlayerEnded: function(){
-            alert("that was awesome!");
-        }
-    });
-
     //fullpage
     $('#fullpage').fullpage({
         sectionsColor: ['white', 'white', 'white', 'white'],

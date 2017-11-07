@@ -127,7 +127,6 @@
   </div>
 
   <div class="section" id="section2">
-    <div class="slide">
       <div class="intro">
         <h1 class="section2h">Activities</h1>
         <p class="section2p">All kinds of concert, live show, and outdoor music festival for you to choose.</p>
@@ -150,21 +149,7 @@
             <%}%>
           </div>
         </div>
-      </div>
     </div>
-    <div class="slide">
-      <div class="intro">
-        <h1></h1>
-        <p></p>
-      </div>
-    </div>
-    <div class="slide">
-      <div class="intro">
-        <h1></h1>
-        <p></p>
-      </div>
-    </div>
-
   </div>
 
   <div class="section" id="section3">

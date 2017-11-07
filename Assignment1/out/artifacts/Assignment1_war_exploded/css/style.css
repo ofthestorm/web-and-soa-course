@@ -18,10 +18,6 @@
 }
 
 @font-face {
-    font-family: ReemKufi;
-    src: url('../fonts/ReemKufi-Regular.ttf');
-}
-@font-face {
     font-family: WorkSans;
     src: url('../fonts/WorkSans-Light.ttf');
 }

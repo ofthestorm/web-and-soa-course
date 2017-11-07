@@ -19,7 +19,6 @@
   <title>music</title>
   <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
   <link rel="stylesheet" type="text/css" href="css/kite.min.css"/>
-  <link rel="stylesheet" type="text/css" href="css/hover.css"/>
   <link rel="stylesheet" type="text/css" href="css/animate.css"/>
   <%--<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"/>--%>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -260,7 +259,6 @@
 </div>
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/jquery.fullpage.min.js"></script>
-<script src="js/jquery.tubeplayer.min.js"></script>
 <script src="js/script.js"></script>
 
 <script>

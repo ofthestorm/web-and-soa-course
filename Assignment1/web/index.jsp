@@ -306,7 +306,7 @@
 
         //必须在open之后send之前!!!
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.setRequestHeader("Authorization", "Bearer BQDaux-BDP7g359IV0BZnnz83BWeF0qIOMfz5gRLpaADbQdOID8igETb2dv8imMNazaL18BZchIKhYN7YlS9b3CIxFWlJsiYG7ZkS-W4RKMoXduCxk_BwlSXKUmlSkzwNuzoEHAuIdZ5HvRQB2bR6RopOWNpXoQ");
+        xmlhttp.setRequestHeader("Authorization", "Bearer BQBY9xReX10cBqAE18O5yaam_HpY7DAtUhrmL1AzH0Kx-gZU6DhJpIVejKlgLDDB2evIzZBui6IhQX8WyLoggyjfNngIUJth_VEy3BkEiHS7aSoIJaWDp16RDXtphgdl1_MoCEqMMCjm6w-hH8Cgf4gcrY5M6wQf7Q");
 
         xmlhttp.send();
     }
@@ -314,6 +314,5 @@
 </body>
 
 <!--<div id="youtube-player"></div>-->
-
 
 </html>

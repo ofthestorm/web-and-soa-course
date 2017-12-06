@@ -5,11 +5,13 @@
         <div class="ui container">
           <a href="#" class="header item">
             <img class="logo" src="assets/images/logo.png">
-            Project Name
+            Museum
           </a>
           <router-link :to="{ name: 'Home'}" class="item">Home</router-link>
           <router-link :to="{ name: 'Wiki'}" class="item">Wiki</router-link>
           <router-link :to="{ name: 'Museum'}" class="item">Museum</router-link>
+          <router-link :to="{ name: 'Collection'}" class="item">Collection</router-link>
+
           <div class="ui simple dropdown item">
             Dropdown <i class="dropdown icon"></i>
             <div class="menu">
@@ -29,9 +31,10 @@
         </div>
       </div>
     </header>
-
-    <router-view/>
-
+    <keep-alive>
+      <router-view/>
+      <!--<router-view v-if="$route.meta.keepAlive"></router-view>-->
+    </keep-alive>
     <div class="ui action left icon input">
       <!--<i class="search icon"></i>-->
       <input type="text" placeholder="Search...">

@@ -1,95 +1,59 @@
-<template>
-  <div class="Home">
-    <!--<div class="slider">-->
-      <!--<div>-->
 
-        <!--<img src="../assets/img/m1.jpg"/>-->
-      <!--</div>-->
-      <!--<div>-->
-        <!--<img src="../assets/img/default.png"/>-->
-      <!--</div>-->
-      <!--<div>-->
-        <!--<img src="../assets/img/default.png"/>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="swiper-container">-->
-      <!--<div class="swiper-wrapper">-->
-        <!--<div class="swiper-slide"><img src="../assets/img/m1.jpg"/></div>-->
-        <!--<div class="swiper-slide"><img src="../assets/img/logo.png"/></div>-->
-        <!--<div class="swiper-slide"><img src="../assets/img/default.png"/></div>-->
-      <!--</div>-->
-      <!--&lt;!&ndash; 如果需要分页器 &ndash;&gt;-->
-      <!--&lt;!&ndash;<div class="swiper-pagination"></div>&ndash;&gt;-->
-
-      <!--&lt;!&ndash; 如果需要导航按钮 &ndash;&gt;-->
-      <!--<div class="swiper-button-prev"></div>-->
-      <!--<div class="swiper-button-next"></div>-->
-
-      <!--&lt;!&ndash; 如果需要滚动条 &ndash;&gt;-->
-      <!--&lt;!&ndash;<div class="swiper-scrollbar"></div>&ndash;&gt;-->
-    <!--</div>-->
-    <div class="banner">
-      <ul>
-        <li>This is a slide.<img style="width: 100%" src="../assets/img/m1.jpg"></li>
-        <li>This is another slide.</li>
-        <li>This is a final slide.</li>
-      </ul>
-    </div>
-    <p>{{ msg }}</p>
-    <div class="ui four cards">
-      <div class="ui card">
-        <div class="image dimmable">
-          <img src="../assets/img/default.png">
-        </div>
-        <div class="content">
-          <div class="header">Title</div>
-          <div class="meta">
-            <a class="group">Meta</a>
-          </div>
-          <div class="description">One or two sentence description that may go to several lines</div>
-        </div>
-        <div class="extra content">
-          <a class="right floated created">Arbitrary</a>
-          <a class="friends">
-            Arbitrary</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</template>
 
 <script>
-  $(function(){
-//    $('.slider').slick({
-//      dots: true,
-//      accessibility: true,
-//      adaptiveHeight: true,
-//      autoplay: true,
-//      autoplaySpeed: 3000,
-//      centerMode: true,
-//      centerPadding: 0,
-//      infinite: true,
-//      speed: 500,
-//      fade: true,
-//      cssEase: 'linear',
-//      respondTo: 'window'
-////      variableWidth: true
-//    });
+
+  $(function() {
+    $('.banner').unslider({
+      speed: 1000,               //  The speed to animate each slide (in milliseconds)
+      delay: 3000,              //  The delay between slide animations (in milliseconds)
+      complete: function () {
+      },  //  A function that gets called after every slide animation
+//          keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+      dots: true,               //  Display dot navigation
+      fluid: false,              //  Support responsive design. May break non-responsive designs
+//          animation: 'fade',
+      autoplay: true,
+      arrows: false,
+      infinite: true
+
+    });
   });
 
 export default {
-
   name: 'Home',
-//  vuex: {
-//    getters: {
-//      fooValue: state => state.foo
-//    },
-//    actions: { fooChange }
-//  },
   data () {
     return {
-      msg: 'Test~'
+      msg: 'Test~',
+      museums: [
+        {
+          title: '1',
+          tag: 'history',
+          description: 'test',
+          img: require('../assets/img/m1.jpg'),
+          link: 'http://www.baidu.com'
+        },
+        {
+          title: '2',
+          tag: 'history',
+          description: 'test',
+          img: require('../assets/img/m1.jpg'),
+          link: 'baidu.com'
+        },
+        {
+          title: '3',
+          tag: 'history',
+          description: 'test',
+          img: require('../assets/img/m1.jpg'),
+          link: 'baidu.com'
+        },
+        {
+          title: '4',
+          tag: 'history',
+          description: 'test',
+          img: require('../assets/img/m1.jpg'),
+          link: 'baidu.com'
+        }
+      ]
     }
   },
   methods: {
@@ -103,8 +67,8 @@ export default {
   body {
     /*padding:0 20px;*/
   }
-  .four {
-   /*margin-left: 20px;*/
+  .test {
+   margin: 20px;
   }
   .swiper-container {
     width: 100%;
@@ -113,6 +77,7 @@ export default {
   .banner {
     position: relative;
     overflow: auto;
+    height:750px;
     /*background-color: #0f0f10;*/
   }
   .banner li {
@@ -122,3 +87,36 @@ export default {
     float: left;
   }
 </style>
+
+
+<template>
+  <div class="Home">
+    <div class="banner">
+      <ul>
+        <li><img style="width: 100%" src="../assets/img/m1.jpg"></li>
+        <li><img style="width: 100%" src="../assets/img/claudio-testa-232180.jpg"/></li>
+      </ul>
+    </div>
+    <p>{{ msg }}</p>
+    <div class="test">
+      <div class="ui four cards">
+        <div class="ui card"  v-for="m in museums">
+          <div class="image dimmable">
+            <img :src = m.img>
+          </div>
+          <div class="content">
+            <div class="header"> {{ m.title }}</div>
+            <div class="meta">
+              <a class="group">{{ m.tag }}</a>
+            </div>
+            <div class="description">{{ m.description }}</div>
+          </div>
+          <div class="extra content">
+            <!--<a class="right floated created">Arbitrary</a>-->
+            <a class="friends" :href="m.link">Arbitrary</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

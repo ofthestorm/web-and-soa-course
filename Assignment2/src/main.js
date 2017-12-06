@@ -6,7 +6,7 @@ import router from './router'
 // import 'mint-ui/lib/style.css'
 // import './css/style.css'
 import App from './App.vue'
-import Navbar from '@/components/Navbar'
+// window.semantic_ui_icon = require("semantic-ui-icon")
 
 
 // 引入全部组件

@@ -11,6 +11,72 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <script src="src/assets/semantic.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>-->
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="src/assets/slick.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/slick-theme.css">
+    <script src="src/assets/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.js"></script>
+    <script>
+      $(function () {
+        $("header").headroom({
+          "tolerance": 5,
+          "offset": 10,
+          "classes": {
+            "initial": "animated",
+            "pinned": "slideDown",
+            "unpinned": "slideUp"
+          }
+        });
+//    headroom.init();
+//        $("#header").headroom("init");
+// to destroy
+//    $("#header").headroom("destroy");
+      });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+    <script>
+//      $(document).ready(function () {
+//
+//        var mySwiper = new Swiper ('.swiper-container', {
+//          direction: 'vertical',
+//          loop: true,
+//
+//          // 如果需要分页器
+////      pagination: '.swiper-pagination',
+//
+//          // 如果需要前进后退按钮
+//          nextButton: '.swiper-button-next',
+//          prevButton: '.swiper-button-prev',
+//
+//          // 如果需要滚动条
+////      scrollbar: '.swiper-scrollbar',
+//          effect : 'fade',
+//          fade: {
+//            crossFade: false,
+//          },
+//          autoplay : 500,
+//          speed:300
+//        })
+//      });
+      $(function() {
+        $('.banner').unslider({
+          speed: 500,               //  The speed to animate each slide (in milliseconds)
+          delay: 3000,              //  The delay between slide animations (in milliseconds)
+          complete: function() {},  //  A function that gets called after every slide animation
+          keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+          dots: true,               //  Display dot navigation
+          fluid: false              //  Support responsive design. May break non-responsive designs
+        });
+
+      });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider-dots.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/js/unslider-min.js"></script>
   </head>
   <body>
     <div id="app"></div>

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/Wiki'
-import Test from '@/components/Test'
-import Navbar from '@/components/Navbar'
+import Wiki from '@/components/Wiki'
+import Home from '@/components/Home'
+import Museum from '@/components/Museum'
 
 Vue.use(Router)
 
@@ -10,13 +10,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Test',
-      component: Test
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/Wiki',
+      name: 'Wiki',
+      component: Wiki
+    },
+    {
+      path: '/Museum',
+      name: 'Museum',
+      component: Museum
     }
-    // {
-    //   path: '/',
-    //   name: 'Navbar',
-    //   component: Navbar
-    // }
   ]
 })

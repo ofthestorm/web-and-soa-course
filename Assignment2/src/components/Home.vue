@@ -53,6 +53,35 @@ export default {
           img: require('../assets/img/m1.jpg'),
           link: 'baidu.com'
         }
+      ],
+      posts: [
+        {
+          title: 'A post',
+          tag: 'Medieval',
+          description: 'A description which may flow for several lines and give context to the content.',
+          img: require('../assets/img/m1.jpg'),
+          link: 'google.com',
+          userName: "UserName",
+          userImg: require('../assets/img/user.png')
+        },
+        {
+          title: 'A post',
+          tag: 'Medieval',
+          description: 'A description which may flow for several lines and give context to the content.',
+          img: require('../assets/img/m1.jpg'),
+          link: 'google.com',
+          userName: "UserName",
+          userImg: require('../assets/img/user.png')
+        },
+        {
+          title: 'A post',
+          tag: 'Medieval',
+          description: 'A description which may flow for several lines and give context to the content.',
+          img: require('../assets/img/m1.jpg'),
+          link: 'google.com',
+          userName: "UserName",
+          userImg: require('../assets/img/user.png')
+        }
       ]
     }
   },
@@ -105,7 +134,9 @@ export default {
             <img :src = m.img>
           </div>
           <div class="content">
-            <div class="header"> {{ m.title }}</div>
+            <div class="header">
+              <a class="header" :href="m.link"> {{ m.title }}</a>
+            </div>
             <div class="meta">
               <a class="group">{{ m.tag }}</a>
             </div>
@@ -118,5 +149,36 @@ export default {
         </div>
       </div>
     </div>
+    <div class="ui three column grid" v-for="p in posts">
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        <div class="ui container">
+          <div class="ui relaxed divided items">
+            <div class="item">
+              <div class="ui small image">
+                <img :src="p.img"/>
+              </div>
+              <div class="content">
+                <a class="header" :href="p.link">{{ p.title }}</a>
+                <div class="meta">
+                  <a>{{ p.tag }}</a>
+                </div>
+                <div class="description">
+                  {{ p.description }}
+                </div>
+                <div class="extra">
+                  <img :src="p.userImg" class="ui circular avatar image"> {{ p.userName }}
+                  <div class="ui right floated primary button">
+                    <a :href="p.link">Learn more<i class="right chevron icon"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="two wide column"></div>
+    </div>
+
   </div>
 </template>

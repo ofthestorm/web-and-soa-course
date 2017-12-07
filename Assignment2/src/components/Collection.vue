@@ -16,12 +16,6 @@
     left: 0;
     top: 0;
 
-    /*display: -webkit-box;*/
-    /*-webkit-box-orient: horizontal;*/
-    /*-webkit-box-pack: center;*/
-    /*-webkit-box-align: center;*/
-    /*padding: 300px 0 300px 0;*/
-
   }
 
   .cover-text h1 {

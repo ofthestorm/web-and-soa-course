@@ -1,53 +1,57 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .Museum {
-    position: relative;
-  }
-  .head-img {
+  img {
     width: 100%;
-    /*clip-path: inset(0px 0px 150px 0px);*/
-
   }
-  .cover-text {
-    width: 100%;
-    height: 829px;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
-    position: absolute;
-    left: 0;
-    top: 0;
-
+  .center {
+    text-align: center;
   }
 
-  .cover-text h1 {
-    position: relative;
-    top:50%;
-    transform:translateY(-50%);
-    color: white;
-    font-size: 80px;
-    /*position: ;*/
-    /*top:30%;*/
-  }
-  .cover-text p {
-    position: relative;
-    top:50%;
-    transform:translateY(-50%);
-    color: white;
-    font-size: 20px;
-    /*position: relative;*/
-  }
 </style>
 
 
 <template>
   <div class="Collection">
-    <!--<img class="head-img" v-bind:src="url">-->
-    <!--:src="url"-->
-    <div class="cover-text">
-      <h1> {{ name }}</h1>
-      <p> {{ description }}</p>
+    <br/>
+    <div class="ui three column grid">
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        <img :src="collection.image">
+        <div class="ui horizontal section divider">Information</div>
+        <div class="center">
+          <h2>Name</h2>
+          <p>{{ collection.name }}</p>
+          <h2>Time</h2>
+          <p>{{ collection.time }}</p>
+          <h2>Owner</h2>
+          <p>{{ collection.owner }}</p>
+          <h2>Description</h2>
+          <p>{{ collection.description }}</p>
+        </div>
+        <div class="ui horizontal section divider">You may like</div>
+      </div>
+    <div class="two wide column"></div>
     </div>
-  </div>
+    <div class="ui five column grid">
+      <div class="two wide column"></div>
+      <div class="four wide column" v-for="r in recommendations">
+          <div class="ui card">
+            <div class="image dimmable">
+              <img :src = "r.image">
+            </div>
+            <div class="content">
+              <div class="header">
+                <a class="header" :href="r.link"> {{ r.title }}</a>
+              </div>
+              <div class="description">{{ r.description }}</div>
+            </div>
+          </div>
+      </div>
+      <div class="two wide column"></div>
+    </div>
 
+
+  </div>
 
 </template>
 
@@ -62,7 +66,33 @@
     name: 'Collection',
     data () {
       return {
-
+        collection: {
+          name: "Masonic apron",
+          time: "1900",
+          image: require('../assets/img/m1.jpg'),
+          description: "The history and authors of Russian literature.",
+          owner: "Museum-Reserve of A.S Pushkin"
+        },
+        recommendations: [
+          {
+            name: "Masonic apron",
+            image: require('../assets/img/m1.jpg'),
+            description: "The history and authors of Russian literature.",
+            link: ""
+          },
+          {
+            name: "Masonic apron",
+            image: require('../assets/img/m1.jpg'),
+            description: "The history and authors of Russian literature.",
+            link: ""
+          },
+          {
+            name: "Masonic apron",
+            image: require('../assets/img/m1.jpg'),
+            description: "The history and authors of Russian literature.",
+            link: ""
+          }
+        ]
       }
     },
     methods: {

@@ -1,5 +1,3 @@
-
-
 <script>
 
   $(function() {
@@ -23,7 +21,8 @@ export default {
   name: 'Home',
   data () {
     return {
-      msg: 'Test~',
+      title: "Hello",
+      subtitle: "test",
       museums: [
         {
           title: '1',
@@ -56,6 +55,7 @@ export default {
       ],
       posts: [
         {
+          postId: "0001",
           title: 'A post',
           tag: 'Medieval',
           description: 'A description which may flow for several lines and give context to the content.',
@@ -65,6 +65,7 @@ export default {
           userImg: require('../assets/img/user.png')
         },
         {
+          postId: "0002",
           title: 'A post',
           tag: 'Medieval',
           description: 'A description which may flow for several lines and give context to the content.',
@@ -74,6 +75,7 @@ export default {
           userImg: require('../assets/img/user.png')
         },
         {
+          postId: "0003",
           title: 'A post',
           tag: 'Medieval',
           description: 'A description which may flow for several lines and give context to the content.',
@@ -86,7 +88,10 @@ export default {
     }
   },
   methods: {
-
+    turnToPost: function (postId) {
+//      alert("hello");
+      window.location.href = "/Post?postId=" + postId;
+    }
   }
 }
 </script>
@@ -99,10 +104,7 @@ export default {
   .test {
    margin: 20px;
   }
-  .swiper-container {
-    width: 100%;
-    height: 600px;
-  }
+
   .banner {
     position: relative;
     overflow: auto;
@@ -115,6 +117,33 @@ export default {
   .banner ul li {
     float: left;
   }
+
+  .cover-text {
+    width: 100%;
+    height: 750px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+  }
+  .cover-content {
+    position: relative;
+    top:50%;
+    transform:translateY(-50%)
+  }
+  .cover-text h1 {
+    color: white;
+    font-size: 80px;
+    /*position: ;*/
+    /*top:30%;*/
+  }
+  .cover-text p {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    /*position: relative;*/
+  }
 </style>
 
 
@@ -125,13 +154,18 @@ export default {
         <li><img style="width: 100%" src="../assets/img/m1.jpg"></li>
         <li><img style="width: 100%" src="../assets/img/claudio-testa-232180.jpg"/></li>
       </ul>
+      <div class="cover-text">
+        <div class="cover-content">
+          <h1> {{ title }}</h1>
+          <p> {{ subtitle }}</p>
+        </div>
+      </div>
     </div>
-    <p>{{ msg }}</p>
     <div class="test">
       <div class="ui four cards">
         <div class="ui card"  v-for="m in museums">
           <div class="image dimmable">
-            <img :src = m.img>
+            <img :src = "m.img">
           </div>
           <div class="content">
             <div class="header">
@@ -168,8 +202,8 @@ export default {
                 </div>
                 <div class="extra">
                   <img :src="p.userImg" class="ui circular avatar image"> {{ p.userName }}
-                  <div class="ui right floated primary button">
-                    <a :href="p.link">Learn more<i class="right chevron icon"></i></a>
+                  <div class="ui right floated primary button" v-on:click="turnToPost(p.postId)">
+                    Learn more<i class="right chevron icon"></i>
                   </div>
                 </div>
               </div>
@@ -179,6 +213,7 @@ export default {
       </div>
       <div class="two wide column"></div>
     </div>
+
 
   </div>
 </template>

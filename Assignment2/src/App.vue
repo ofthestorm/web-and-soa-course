@@ -12,22 +12,31 @@
           <router-link :to="{ name: 'Museum'}" class="item">Museum</router-link>
           <router-link :to="{ name: 'Collection'}" class="item">Collection</router-link>
 
-          <div class="ui simple dropdown item right" >
-            Settings <i class="dropdown icon"></i>
-            <div class="menu">
-              <a class="item" href="login.html">Login</a>
-              <!--<div class="divider"></div>-->
-              <!--<div class="header">Header Item</div>-->
-              <!--<div class="item">-->
+          <div class="right menu">
+            <div class="item">
+              <div class="ui transparent inverted icon input">
+                <i class="search icon"></i>
+                <input type="text" placeholder="Search">
+              </div>
+            </div>
+            <div class="ui simple dropdown item " >
+              Settings <i class="dropdown icon"></i>
+              <div class="menu">
+                <a class="item" href="login.html">Login</a>
+                <!--<div class="divider"></div>-->
+                <!--<div class="header">Header Item</div>-->
+                <!--<div class="item">-->
                 <!--<i class="dropdown icon"></i>-->
                 <!--Sub Menu-->
                 <!--<div class="menu">-->
-                  <!--<a class="item" href="#">Link Item</a>-->
+                <!--<a class="item" href="#">Link Item</a>-->
                 <!--</div>-->
-              <!--</div>-->
-              <a class="item" href="signup.html">Sign up</a>
+                <!--</div>-->
+                <a class="item" href="signup.html">Sign up</a>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </header>
@@ -35,11 +44,7 @@
       <router-view/>
       <!--<router-view v-if="$route.meta.keepAlive"></router-view>-->
     </keep-alive>
-    <div class="ui action left icon input">
-      <i class="search icon"></i>
-      <input type="text" placeholder="Search...">
-      <div class="ui teal button">Search</div>
-    </div>
+
 
     <div class="ui inverted vertical footer segment">
       <div class="ui center aligned container">
@@ -96,15 +101,26 @@ export default {
   margin-top: 40px;
   width: 100%;
 }
-/*.page-tabbar {*/
-  /*overflow: hidden;*/
-  /*height: 100vh;*/
-/*}*/
 
-/*.page-wrap {*/
-  /*overflow: auto;*/
-  /*height: 100%;*/
-  /*padding-bottom: 100px;*/
-/*}*/
+@font-face {
+  font-family: Roboto-Light;
+  src: url('assets/fonts/Roboto-Light.ttf');
+}
+@font-face {
+  font-family: Roboto-Thin;
+  src: url('assets/fonts/Roboto-Thin.ttf');
+}
+@font-face {
+  font-family: Roboto-Regular;
+  src: url('assets/fonts/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: Roboto-Bold;
+  src: url('assets/fonts/Roboto-Bold.ttf');
+}
+@font-face {
+  font-family: Roboto-Medium;
+  src: url('assets/fonts/Roboto-Medium.ttf');
+}
 
 </style>

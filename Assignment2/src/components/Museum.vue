@@ -16,13 +16,14 @@
     position: absolute;
     left: 0;
     top: 0;
-
+    text-align: center;
   }
-
-  .cover-text h1 {
+  .cover-content {
     position: relative;
     top:50%;
-    transform:translateY(-50%);
+    transform:translateY(-50%)
+  }
+  .cover-text h1 {
     color: white;
     font-size: 80px;
     /*position: ;*/
@@ -30,15 +31,15 @@
   }
   .cover-text p {
     position: relative;
-    top:50%;
-    transform:translateY(-50%);
     color: white;
     font-size: 20px;
     /*position: relative;*/
   }
+
   .info {
     width: 100%;
-    background-color: #F5F5F5;
+    /*background-color: #F5F5F5;*/
+    text-align: center;
   }
 </style>
 
@@ -48,9 +49,16 @@
     <img class="head-img" v-bind:src="url">
     <!--:src="url"-->
     <div class="cover-text">
-      <h1> {{ name }}</h1>
-      <p> {{ description }}</p>
+      <div class="cover-content">
+        <h1> {{ name }}</h1>
+        <p> {{ description }}</p>
+        <i v-if="usrLike === true" class="heart red big icon"></i>
+        <i v-else="" class="heart empty inverted big icon"></i>
+      </div>
     </div>
+
+    <div class="ui horizontal section divider">Information</div>
+
 
     <div class="info">
       <h3><i class="calendar icon"></i>Open time</h3>
@@ -62,8 +70,12 @@
       <h3><i class="ticket icon"></i>Ticket price</h3>
       <p>{{ info.ticketPrice }}</p>
       <h3><i class="smile icon"></i>Score</h3>
-      <p>{{ info.score }}</p>
+      <p><i v-for="n in 5" v-if=" info.score - n >= 0" class="star yellow icon"></i>
+        <i v-else="" class="star grey icon"></i>{{ info.score }}</p>
+
     </div>
+    <br/>
+    <div class="ui horizontal section divider">Comments</div>
 
     <div class="ui three column grid"  v-for="r in reviews" >
       <div class="four wide column"></div>
@@ -100,6 +112,7 @@
       <div class="four wide column"></div>
     </div>
 
+    <div class="ui horizontal section divider">You may like </div>
 
 
 
@@ -128,28 +141,31 @@
     name: 'Museum',
     data () {
       return {
-        name: "test",
-        description: "hello",
+        name: "Russian Literature Museums",
+        description: "The history and authors of Russian literature.",
         url : require('../assets/img/m1.jpg'),
+        usrLike: true,
         info: {
           openTime: "Mon - Tues, 8:00 - 17:00",
           location: "Longteng Road, Xuhui, Shanghai",
           tel: "8273-2883",
           ticketPrice: "$100",
-          score: "5"
+          score: "4.5"
         },
         reviews: [
           {
             userName: "Username",
             userImg: require('../assets/img/user.png'),
             score: "5",
-            comment: "test",
+            comment: "A description which may flow for several lines and give context to the content." +
+            "A description which may flow for several lines and give context to the content." +
+            "A description which may flow for several lines and give context to the content.",
             date: "2017-9-18 10:00"
           },
           {
             userName: "Username",
             userImg: require('../assets/img/user.png'),
-            score: "4",
+            score: "4.5",
             comment: "test",
             date: "2017-9-18 10:00"
           },

@@ -41,7 +41,7 @@
             </div>
             <div class="content">
               <div class="header">
-                <a class="header" :href="r.link"> {{ r.title }}</a>
+                <a class="header" :href="r.link"> {{ r.name }}</a>
               </div>
               <div class="description">{{ r.description }}</div>
             </div>
@@ -50,7 +50,7 @@
       <div class="two wide column"></div>
     </div>
 
-
+<br/>
   </div>
 
 </template>

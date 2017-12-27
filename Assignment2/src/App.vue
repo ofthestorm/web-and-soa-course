@@ -4,7 +4,7 @@
       <div class="ui fixed inverted menu ">
         <div class="ui container">
           <p class="header item">
-            <img class="logo" src="assets/images/logo.png">
+            <!--<img class="logo" src="assets/images/logo.png">-->
             Museum
           </p>
           <router-link :to="{ name: 'Home'}" class="item">Home</router-link>

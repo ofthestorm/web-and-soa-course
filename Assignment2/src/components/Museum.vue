@@ -77,6 +77,29 @@
     <br/>
     <div class="ui horizontal section divider">Comments</div>
 
+
+    <div class="ui three column grid">
+      <div class="four wide column"></div>
+      <div class="eight wide column">
+        <!--<div class="ui one cards">-->
+          <!--<div class="ui card">-->
+            <div class="ui comments">
+            <form class="ui reply form">
+              <div class="field">
+                <textarea v-model="myComment"></textarea>
+              </div>
+              <div class="ui blue labeled submit icon button">
+                <i class="icon edit"></i> Add Comments
+              </div>
+              <!--<p> {{ myComment }}</p>-->
+            </form>
+            </div>
+          <!--</div>-->
+        <!--</div>-->
+      </div>
+    </div>
+
+
     <div class="ui three column grid"  v-for="r in reviews" >
       <div class="four wide column"></div>
       <div class="eight wide column">
@@ -112,9 +135,39 @@
       <div class="four wide column"></div>
     </div>
 
-    <div class="ui horizontal section divider">You may like </div>
+    <div class="ui horizontal section divider">Collections </div>
 
-
+    <div class="ui five column grid">
+      <div class="two wide column"></div>
+      <div class="four wide column" v-for="c in collections">
+        <div class="ui card">
+          <div class="image dimmable">
+            <img :src = "c.image">
+          </div>
+          <div class="content">
+            <div class="header">
+              <!--<a class="header" :href="r.link"> {{ c.name }}</a>-->
+            </div>
+            <div class="description">{{ c.description }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="four wide column">
+        <div class="ui card">
+          <!--<div class="image dimmable">-->
+            <!--&lt;!&ndash;<img :src = "c.image">&ndash;&gt;-->
+          <!--</div>-->
+          <div class="content">
+            <!--<div class="header">-->
+              <i class="plus icon grey huge"></i>
+              <!--<a class="header" :href="r.link"> {{ c.name }}</a>-->
+            <!--</div>-->
+            <!--<div class="description">{{ c.description }}</div>-->
+          </div>
+        </div>
+      </div>
+      <div class="two wide column"></div>
+    </div>
 
   </div>
 
@@ -182,6 +235,21 @@
             score: "0",
             comment: "test",
             date: "2017-9-18 10:00"
+          }
+        ],
+        myComment: "",
+        collections: [
+          {
+            name: "Masonic",
+            image: require('../assets/img/m1.jpg'),
+            description: "The history and authors of Russian literature.",
+            link: ""
+          },
+          {
+            name: "Masonic apron",
+            image: require('../assets/img/m1.jpg'),
+            description: "The history and authors of Russian literature.",
+            link: ""
           }
         ]
       }

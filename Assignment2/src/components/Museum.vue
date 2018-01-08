@@ -7,7 +7,6 @@
   .head-img {
    width: 100%;
     /*clip-path: inset(0px 0px 150px 0px);*/
-
   }
   .cover-text {
     width: 100%;
@@ -41,6 +40,24 @@
     /*background-color: #F5F5F5;*/
     text-align: center;
   }
+  #allmap {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin:0;
+    font-family:"微软雅黑";
+  }
+  .addCollection {
+    height: 265px;
+    text-align: center;
+    /*vertical-align:middle;*/
+  }
+
+  .addCollection i {
+    line-height: 265px;
+  }
+
+
 </style>
 
 
@@ -75,6 +92,9 @@
 
     </div>
     <br/>
+    <div id="allmap"></div>
+    <div id="result"></div>
+
     <div class="ui horizontal section divider">Comments</div>
 
 
@@ -153,44 +173,25 @@
         </div>
       </div>
       <div class="four wide column">
-        <div class="ui card">
-          <!--<div class="image dimmable">-->
-            <!--&lt;!&ndash;<img :src = "c.image">&ndash;&gt;-->
-          <!--</div>-->
+        <div class="ui card addCollection">
           <div class="content">
-            <!--<div class="header">-->
-              <i class="plus icon grey huge"></i>
-              <!--<a class="header" :href="r.link"> {{ c.name }}</a>-->
-            <!--</div>-->
-            <!--<div class="description">{{ c.description }}</div>-->
+              <i id="addCollection" class="plus icon grey huge"></i>
           </div>
         </div>
       </div>
       <div class="two wide column"></div>
     </div>
-
+  <br/>
   </div>
-
-
-
 </template>
 
 
 
 <script>
-  ;$(function () {
-//    var height = $('.head-img').height() - (screen.height - 40);
-//    alert(height);
-//    if(height > 0) {
-//      $('.head-img').css("clip-path", "inset(0px 0px 150px 0px)");
-//    }
-
-    $('.cover-text').css("height",$('.head-img').height());
-
-
-  });
-
-  export default {
+  import router from '../router/index.js'
+//import AddCollection from '@/components/AddCollection'
+//import someAction from "..//router/index.js"
+export default {
     name: 'Museum',
     data () {
       return {
@@ -258,10 +259,45 @@
 
     },
     computed: {
-//      screenHeight: function () {
-//        return screen.height - 40;
-//      }
+
+    },
+    mounted: function () {
+      this.$nextTick(function () {
+        var self = this;
+        $('#addCollection').click(function () {
+          router.push({ path: '/AddCollection'});
+        });
+
+
+
+        console.log("mount")
+        var map = new BMap.Map("allmap");    // 创建Map实例
+        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+        // 创建地址解析器实例
+        var myGeo = new BMap.Geocoder();
+        // 将地址解析结果显示在地图上,并调整地图视野
+        myGeo.getPoint("上海市嘉定区同济大学", function(point){
+          if (point) {
+            map.centerAndZoom(point, 16);
+            map.addOverlay(new BMap.Marker(point));
+          }else{
+            alert("您选择地址没有解析到结果!");
+          }
+        }, "上海市");
+        //添加地图类型控件
+        map.addControl(new BMap.MapTypeControl({
+          mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+          ]}));
+        map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+//    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+        map.setMapStyle({style:'light'});
+
+      })
+
     }
+
   }
 
 </script>

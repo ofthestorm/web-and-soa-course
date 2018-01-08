@@ -25,16 +25,16 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="email" placeholder="E-mail address">
+            <input type="text" name="email" id="email" placeholder="E-mail address">
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password">
           </div>
         </div>
-        <div class="ui fluid large teal submit button">Login</div>
+        <div class="ui fluid large teal submit button" id="loginBtn">Login</div>
       </div>
 
       <div class="ui error message"></div>
@@ -47,7 +47,27 @@
   </div>
 </div>
 
+<script>
+  ;$(function () {
+    $('#loginBtn').click(function () {
+      var email = $('#email').val();
+      var password = $('#password').val();
+      $.ajax({
+        url:"",
+        method:"GET",
+        data: {email, password},
+        success: function (result) {
 
+          //cookie
+        },
+        beforeSend: function(xhr) {
+        xhr.setRequestHeader("Cookie", "");
+      }})
+
+    })
+
+  })
+</script>
 
 
 </body>

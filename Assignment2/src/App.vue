@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header data-headroom id="header" class="header">
+    <header data-headroom id="header" class="header headroom">
       <div class="ui fixed inverted menu ">
         <div class="ui container">
           <p class="header item">
@@ -11,27 +11,21 @@
           <router-link :to="{ name: 'Wiki'}" class="item">Wiki</router-link>
           <router-link :to="{ name: 'Museum'}" class="item">Museum</router-link>
           <router-link :to="{ name: 'Collection'}" class="item">Collection</router-link>
-
+          <router-link :to="{ name: 'AddCollection'}" class="item">AddCollection</router-link>
           <div class="right menu">
             <div class="item">
               <div class="ui transparent inverted icon input">
-                <i class="search icon"></i>
-                <input type="text" placeholder="Search">
+
+                <input type="text" placeholder="Search" v-model="searchKeyword">
+                <div v-on:click="search" >
+                  <i class="search icon"></i>
+                </div>
               </div>
             </div>
             <div class="ui simple dropdown item " >
               Settings <i class="dropdown icon"></i>
               <div class="menu">
                 <a class="item" href="login.html">Login</a>
-                <!--<div class="divider"></div>-->
-                <!--<div class="header">Header Item</div>-->
-                <!--<div class="item">-->
-                <!--<i class="dropdown icon"></i>-->
-                <!--Sub Menu-->
-                <!--<div class="menu">-->
-                <!--<a class="item" href="#">Link Item</a>-->
-                <!--</div>-->
-                <!--</div>-->
                 <a class="item" href="signup.html">Sign up</a>
               </div>
             </div>
@@ -40,11 +34,10 @@
         </div>
       </div>
     </header>
+
     <keep-alive>
       <router-view/>
-      <!--<router-view v-if="$route.meta.keepAlive"></router-view>-->
     </keep-alive>
-
 
     <div class="ui inverted vertical footer segment">
       <div class="ui center aligned container">
@@ -53,38 +46,63 @@
         </div>
       </div>
     </div>
+
+    <div class="ui basic modal">
+      <div class="content">
+        <h1>Museums</h1>
+        <p v-for="m in searchMuseum">{{ m }}</p>
+        <h1>Collections</h1>
+        <p v-for="c in searchCollection">{{ c }}</p>
+      </div>
+      <div class="actions">
+        <div class="ui red basic cancel inverted button">
+          <i class="remove icon"></i>
+          Close
+        </div>
+      </div>
+    </div>
   </div>
+
+
 </template>
 
 <script>
-  $(function () {
-    $("header").headroom({
-      "tolerance": 5,
-      "offset": 10,
-      "classes": {
-        "initial": "animated",
-        "pinned": "slideDown",
-        "unpinned": "slideUp"
-      }
-    }).init();
-//    headroom.init();
-  });
+
 
 export default {
   name: 'app',
-//  data() {
-//    return {
-//      selected: '外卖'
-//    };
-//  },
+  data() {
+    return {
+      searchKeyword: "",
+      searchMuseum: [
+        "1",
+        "2"
+      ],
+      searchCollection: [
+        "3",
+        "4"
+      ]
+    }
+
+  },
   methods: {
-//    prev: function () {
-//      this.$refs.swipeWrapper.prev();
-//      console.log(this.$children);
-//    },
-//    next: function () {
-//      this.$refs.swipeWrapper.next();
-//    }
+    search: function () {
+      $('.ui.basic.modal').modal('show');
+//      console.log("~");
+    }
+  },
+  mounted: function () {
+    this.$nextTick(function () {
+        $("#header").headroom({
+          "tolerance": 5,
+          "offset": 10,
+          "classes": {
+            "initial": "animated",
+            "pinned": "slideDown",
+            "unpinned": "slideUp"
+          }
+        });
+    });
   }
 
 }

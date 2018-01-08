@@ -1,22 +1,5 @@
 <script>
 
-  $(function() {
-    $('.banner').unslider({
-      speed: 1000,               //  The speed to animate each slide (in milliseconds)
-      delay: 3000,              //  The delay between slide animations (in milliseconds)
-      complete: function () {
-      },  //  A function that gets called after every slide animation
-//          keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-      dots: true,               //  Display dot navigation
-      fluid: false,              //  Support responsive design. May break non-responsive designs
-//          animation: 'fade',
-      autoplay: true,
-      arrows: false,
-      infinite: true
-
-    });
-  });
-
 export default {
   name: 'Home',
   data () {
@@ -92,6 +75,25 @@ export default {
 //      alert("hello");
       window.location.href = "/Post?postId=" + postId;
     }
+  },
+  created: function () {
+
+  },
+  mounted: function () {
+    this.$nextTick(function () {
+      $('.banner').unslider({
+        speed: 1000,               //  The speed to animate each slide (in milliseconds)
+        delay: 3000,              //  The delay between slide animations (in milliseconds)
+        complete: function () {
+        },  //  A function that gets called after every slide animation
+//          keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+        dots: true,               //  Display dot navigation
+        fluid: false,              //  Support responsive design. May break non-responsive designs
+        autoplay: true,
+        arrows: false,
+        infinite: true
+      });
+    })
   }
 }
 </script>
@@ -109,6 +111,7 @@ export default {
     position: relative;
     overflow: auto;
     height:750px;
+    width: 100%;
     /*background-color: #0f0f10;*/
   }
   .banner li {

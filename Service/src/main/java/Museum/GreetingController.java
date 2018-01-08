@@ -24,6 +24,13 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
 
     }
+    @RequestMapping("/account")
+    public void login(@RequestParam(value="name", defaultValue="World") String name) {
+
+//        System.out.println("==== in greeting ====");
+//        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+
+    }
 //    http://localhost:8080/greeting?name=User.
 
 //    @GetMapping("/greeting-javaconfig")

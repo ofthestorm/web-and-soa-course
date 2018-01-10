@@ -70,25 +70,18 @@ export default {
       ]
     }
   },
-  methods: {
-    turnToPost: function (postId) {
-//      alert("hello");
-      window.location.href = "/Post?postId=" + postId;
-    }
-  },
   created: function () {
 
   },
   mounted: function () {
     this.$nextTick(function () {
       $('.banner').unslider({
-        speed: 1000,               //  The speed to animate each slide (in milliseconds)
+        speed: 1000,              //  The speed to animate each slide (in milliseconds)
         delay: 3000,              //  The delay between slide animations (in milliseconds)
         complete: function () {
-        },  //  A function that gets called after every slide animation
-//          keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+          },                      //  A function that gets called after every slide animation
         dots: true,               //  Display dot navigation
-        fluid: false,              //  Support responsive design. May break non-responsive designs
+        fluid: false,             //  Support responsive design. May break non-responsive designs
         autoplay: true,
         arrows: false,
         infinite: true
@@ -98,10 +91,8 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   body {
-    /*padding:0 20px;*/
   }
   .test {
    margin: 20px;
@@ -112,7 +103,6 @@ export default {
     overflow: auto;
     height:750px;
     width: 100%;
-    /*background-color: #0f0f10;*/
   }
   .banner li {
     list-style: none;
@@ -138,14 +128,11 @@ export default {
   .cover-text h1 {
     color: white;
     font-size: 80px;
-    /*position: ;*/
-    /*top:30%;*/
   }
   .cover-text p {
     position: relative;
     color: white;
     font-size: 20px;
-    /*position: relative;*/
   }
 </style>
 
@@ -180,7 +167,6 @@ export default {
             <div class="description">{{ m.description }}</div>
           </div>
           <div class="extra content">
-            <!--<a class="right floated created">Arbitrary</a>-->
             <a class="friends" :href="m.link">Arbitrary</a>
           </div>
         </div>
@@ -205,7 +191,7 @@ export default {
                 </div>
                 <div class="extra">
                   <img :src="p.userImg" class="ui circular avatar image"> {{ p.userName }}
-                  <div class="ui right floated primary button" v-on:click="turnToPost(p.postId)">
+                  <div class="ui right floated primary button">
                     Learn more<i class="right chevron icon"></i>
                   </div>
                 </div>
@@ -216,7 +202,5 @@ export default {
       </div>
       <div class="two wide column"></div>
     </div>
-
-
   </div>
 </template>

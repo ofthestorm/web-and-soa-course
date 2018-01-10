@@ -1,5 +1,3 @@
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .Museum {
     position: relative;
@@ -25,8 +23,6 @@
   .cover-text h1 {
     color: white;
     font-size: 80px;
-    /*position: ;*/
-    /*top:30%;*/
   }
   .cover-text p {
     position: relative;
@@ -37,7 +33,6 @@
 
   .info {
     width: 100%;
-    /*background-color: #F5F5F5;*/
     text-align: center;
   }
   #allmap {
@@ -106,6 +101,8 @@
             <div class="ui comments">
             <form class="ui reply form">
               <div class="field">
+                <div class="ui star rating"></div>
+
                 <textarea v-model="myComment"></textarea>
               </div>
               <div class="ui blue labeled submit icon button">
@@ -128,10 +125,8 @@
             <div class="extra content">
 
              <span class="left floated like">
-              <!--<div class="header">-->
                  <img :src="r.userImg" class="ui avatar right spaced image">
                {{ r.userName }}
-                <!--</div>-->
              </span>
               <span class="right floated star">
                {{ r.date }}
@@ -166,7 +161,6 @@
           </div>
           <div class="content">
             <div class="header">
-              <!--<a class="header" :href="r.link"> {{ c.name }}</a>-->
             </div>
             <div class="description">{{ c.description }}</div>
           </div>
@@ -188,9 +182,7 @@
 
 
 <script>
-  import router from '../router/index.js'
-//import AddCollection from '@/components/AddCollection'
-//import someAction from "..//router/index.js"
+import router from '../router/index.js'
 export default {
     name: 'Museum',
     data () {
@@ -239,6 +231,7 @@ export default {
           }
         ],
         myComment: "",
+        myScore: 3,
         collections: [
           {
             name: "Masonic",
@@ -265,34 +258,39 @@ export default {
       this.$nextTick(function () {
         var self = this;
         $('#addCollection').click(function () {
-          router.push({ path: '/AddCollection'});
+//          router.push({ path: '/AddCollection'});
+          router.push({ path: 'Collection', params: { name: "hehe" }});
         });
-
-
-
-        console.log("mount")
-        var map = new BMap.Map("allmap");    // 创建Map实例
-        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
-        // 创建地址解析器实例
+        var map = new BMap.Map("allmap");
+        map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
         var myGeo = new BMap.Geocoder();
-        // 将地址解析结果显示在地图上,并调整地图视野
         myGeo.getPoint("上海市嘉定区同济大学", function(point){
           if (point) {
             map.centerAndZoom(point, 16);
             map.addOverlay(new BMap.Marker(point));
           }else{
-            alert("您选择地址没有解析到结果!");
+            alert("No result");
           }
         }, "上海市");
-        //添加地图类型控件
         map.addControl(new BMap.MapTypeControl({
           mapTypes:[
-            BMAP_NORMAL_MAP,
-            BMAP_HYBRID_MAP
+            BMAP_NORMAL_MAP
           ]}));
-        map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
 //    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
         map.setMapStyle({style:'light'});
+
+        $('.ui.star.rating')
+          .rating({
+            initialRating: 0,
+            maxRating: 5
+          });
+
+        //提交评论的时候 用$('.ui.star.rating').rating("get rating")拿到评分
+
+        console.log($('.ui.star.rating').rating("get rating"));
+
+        //mId
+        console.log(this.$route.params.mId);
 
       })
 

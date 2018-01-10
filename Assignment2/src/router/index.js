@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Wiki from '@/components/Wiki'
 import Home from '@/components/Home'
 import Museum from '@/components/Museum'
 import Collection from '@/components/Collection'
 import AddCollection from '@/components/AddCollection'
+import Post from '@/components/Post'
+import AddMuseum from '@/components/AddMuseum'
 
 Vue.use(Router)
 
-// export const router = new Router({
 export default new Router({
   routes: [
     {
@@ -18,17 +18,12 @@ export default new Router({
       canReuse: false
     },
     {
-      path: '/Wiki',
-      name: 'Wiki',
-      component: Wiki
-    },
-    {
-      path: '/Museum',
+      path: '/Museum/:mId',
       name: 'Museum',
       component: Museum
     },
     {
-      path: '/Collection',
+      path: '/Collection/:cId',
       name: 'Collection',
       component: Collection
     },
@@ -36,10 +31,16 @@ export default new Router({
       path: '/AddCollection',
       name: 'AddCollection',
       component: AddCollection
+    },
+    {
+      path: '/AddMuseum',
+      name: 'AddMuseum',
+      component: AddMuseum
+    },
+    {
+      path: '/Post/:pId',
+      name: 'Post',
+      component: Post
     }
   ]
 })
-
-export const someAction = ({commit}) => {
-  this.$router.push("/AddCollection");
-}

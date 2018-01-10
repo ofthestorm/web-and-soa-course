@@ -7,6 +7,12 @@
     margin: 0 auto;
     width: 40%;
   }
+  .editArea {
+    width: 20%;
+  }
+  .textArea {
+    width: 60%;
+  }
 
 </style>
 
@@ -20,24 +26,23 @@
         <!--<img :src="collection.image">-->
         <!--<div id="fileupload"></div>-->
         <input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
-        <div class="ui horizontal section divider">Information</div>
-
+        <br/>
         <div class="center">
           <form>
-            <h2>Name</h2>
+            <p>Name</p>
             <div class="ui input editArea">
               <input type="text"  v-model="collection.name">
             </div>
-            <h2>Time</h2>
+            <p>Time</p>
             <div class="ui input editArea">
               <input type="text"  v-model="collection.time">
             </div>
-            <h2>Owner</h2>
+            <p>Owner</p>
             <div class="ui input editArea">
               <input type="text"  v-model="collection.owner">
             </div>
-            <h2>Description</h2>
-            <div class="ui comments editArea" >
+            <p>Description</p>
+            <div class="ui comments editArea textArea" >
               <form class="ui reply form" >
                 <div class="field">
                   <textarea  v-model="collection.description"></textarea>
@@ -49,9 +54,10 @@
         <br/>
         <div class="center">
           <div id="save">
-            <i class="checkmark box icon green big"></i> Save
+            <i class="checkmark box icon green big"></i> Submit
           </div>
         </div>
+      <br/><br/><br/><br/><br/><br/>
       </div>
       <div class="two wide column"></div>
     </div>
@@ -91,27 +97,7 @@
 
         });
 
-        $('#fileupload').fileupload({
-          done: function (e, data) {
-            $.each(data.result, function (index, file) {
-              $('<p/>').text(file.name + ' uploaded').appendTo($("body"));
-            });
-          },
-          progress: function (e,data){
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            console.log(progress);
-          },
-          previewMaxWidth: 512,
-          previewMaxHeight: 5000000,
-          processalways: function(e,data) {
-            var index = data.index,
-              preview = data.files[index].preview;
-            console.log(preview);
-          },
-          acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
-          dropZone: $(document)
 
-        });
       });
     }
   }

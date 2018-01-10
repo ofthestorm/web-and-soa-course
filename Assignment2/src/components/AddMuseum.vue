@@ -72,7 +72,7 @@
         <br/>
         <div class="center">
           <div id="save">
-            <i class="checkmark box icon green big"></i> Save
+            <i class="checkmark box icon green big"></i> Submit
           </div>
         </div>
       </div>

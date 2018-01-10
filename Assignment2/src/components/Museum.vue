@@ -90,65 +90,9 @@
     <div id="allmap"></div>
     <div id="result"></div>
 
-    <div class="ui horizontal section divider">Comments</div>
 
 
-    <div class="ui three column grid">
-      <div class="four wide column"></div>
-      <div class="eight wide column">
-        <!--<div class="ui one cards">-->
-          <!--<div class="ui card">-->
-            <div class="ui comments">
-            <form class="ui reply form">
-              <div class="field">
-                <div class="ui star rating"></div>
 
-                <textarea v-model="myComment"></textarea>
-              </div>
-              <div class="ui blue labeled submit icon button">
-                <i class="icon edit"></i> Add Comments
-              </div>
-              <!--<p> {{ myComment }}</p>-->
-            </form>
-            </div>
-          <!--</div>-->
-        <!--</div>-->
-      </div>
-    </div>
-
-
-    <div class="ui three column grid"  v-for="r in reviews" >
-      <div class="four wide column"></div>
-      <div class="eight wide column">
-        <div class="ui one cards">
-          <div class="ui card">
-            <div class="extra content">
-
-             <span class="left floated like">
-                 <img :src="r.userImg" class="ui avatar right spaced image">
-               {{ r.userName }}
-             </span>
-              <span class="right floated star">
-               {{ r.date }}
-               <i v-for="n in 5" v-if=" r.score - n >= 0" class="star yellow icon"></i>
-               <i v-else="" class="star grey icon"></i>
-             </span>
-            </div>
-            <div class="content">
-              <div class="description">
-                <i class="quote left icon"></i>
-                {{ r.comment }}
-                <i class="quote right icon"></i>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-      <div class="four wide column"></div>
-    </div>
 
     <div class="ui horizontal section divider">Collections </div>
 
@@ -175,7 +119,97 @@
       </div>
       <div class="two wide column"></div>
     </div>
-  <br/>
+
+    <div class="ui horizontal section divider">Posts </div>
+    <div class="ui three column grid" v-for="p in posts">
+      <div class="two wide column"></div>
+      <div class="twelve wide column">
+        <div class="ui container">
+          <div class="ui relaxed divided items">
+            <div class="item">
+              <div class="ui small image">
+                <img :src="p.img"/>
+              </div>
+              <div class="content">
+                <a class="header" :href="p.link">{{ p.title }}</a>
+                <div class="meta">
+                  <a>{{ p.tag }}</a>
+                </div>
+                <div class="description">
+                  {{ p.description }}
+                </div>
+                <div class="extra">
+                  <img :src="p.userImg" class="ui circular avatar image"> {{ p.userName }}
+                  <div class="ui right floated primary button">
+                    Learn more<i class="right chevron icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="two wide column"></div>
+    </div>
+
+    <div class="ui horizontal section divider">Comments</div>
+
+
+    <div class="ui three column grid">
+      <div class="four wide column"></div>
+      <div class="eight wide column">
+        <!--<div class="ui one cards">-->
+        <!--<div class="ui card">-->
+        <div class="ui comments">
+          <form class="ui reply form">
+            <div class="field">
+              <div class="ui star rating"></div>
+              <textarea v-model="myComment"></textarea>
+            </div>
+            <div class="ui blue labeled submit icon button">
+              <i class="icon edit"></i> Add Comments
+            </div>
+            <!--<p> {{ myComment }}</p>-->
+          </form>
+        </div>
+        <!--</div>-->
+        <!--</div>-->
+      </div>
+    </div>
+    <div class="ui three column grid"  v-for="r in reviews" >
+      <div class="four wide column"></div>
+      <div class="eight wide column">
+        <div class="ui one cards">
+          <div class="ui card">
+            <div class="extra content">
+
+             <span class="left floated like">
+                 <img :src="r.userImg" class="ui avatar right spaced image">
+               {{ r.userName }}
+             </span>
+              <span class="right floated star">
+               {{ r.date }}
+               <i v-for="n in 5" v-if=" r.score - n >= 0" class="star yellow icon"></i>
+               <i v-else="" class="star grey icon"></i>
+             </span>
+            </div>
+            <div class="content">
+              <div class="description">
+                <i class="quote left icon"></i>
+                {{ r.comment }}
+                <i class="quote right icon"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="four wide column"></div>
+    </div>
+
+
+    <br/>
   </div>
 </template>
 
@@ -245,6 +279,38 @@ export default {
             description: "The history and authors of Russian literature.",
             link: ""
           }
+        ],
+        posts: [
+          {
+            postId: "0001",
+            title: 'A post',
+            tag: 'Medieval',
+            description: 'A description which may flow for several lines and give context to the content.',
+            img: require('../assets/img/m1.jpg'),
+            link: 'google.com',
+            userName: "UserName",
+            userImg: require('../assets/img/user.png')
+          },
+          {
+            postId: "0002",
+            title: 'A post',
+            tag: 'Medieval',
+            description: 'A description which may flow for several lines and give context to the content.',
+            img: require('../assets/img/m1.jpg'),
+            link: 'google.com',
+            userName: "UserName",
+            userImg: require('../assets/img/user.png')
+          },
+          {
+            postId: "0003",
+            title: 'A post',
+            tag: 'Medieval',
+            description: 'A description which may flow for several lines and give context to the content.',
+            img: require('../assets/img/m1.jpg'),
+            link: 'google.com',
+            userName: "UserName",
+            userImg: require('../assets/img/user.png')
+          }
         ]
       }
     },
@@ -259,7 +325,6 @@ export default {
         var self = this;
         $('#addCollection').click(function () {
 //          router.push({ path: '/AddCollection'});
-          router.push({ path: 'Collection', params: { name: "hehe" }});
         });
         var map = new BMap.Map("allmap");
         map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
@@ -291,6 +356,9 @@ export default {
 
         //mId
         console.log(this.$route.params.mId);
+
+//        router.push({ path: 'Collection', params: { cId: "" }});
+
 
       })
 

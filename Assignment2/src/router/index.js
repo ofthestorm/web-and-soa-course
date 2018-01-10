@@ -5,9 +5,13 @@ import Museum from '@/components/Museum'
 import Collection from '@/components/Collection'
 import AddCollection from '@/components/AddCollection'
 import Post from '@/components/Post'
+import AddPost from '@/components/AddPost'
 import AddMuseum from '@/components/AddMuseum'
+import util from './util'
 
-Vue.use(Router)
+Vue.use(util);
+
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -41,6 +45,11 @@ export default new Router({
       path: '/Post/:pId',
       name: 'Post',
       component: Post
+    },
+    {
+      path: '/AddPost',
+      name: 'AddPost',
+      component: AddPost
     }
   ]
 })

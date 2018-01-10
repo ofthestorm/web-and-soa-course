@@ -9,6 +9,10 @@
     margin: 0 auto;
     width: 40%;
   }
+  .editArea {
+    width: 80%;
+  }
+
 
 </style>
 
@@ -25,19 +29,19 @@
         <div class="center">
           <form>
             <h2>Name</h2>
-            <div class="ui input editArea">
-              <input type="text" :value="collection.name" v-model="collection.name">
-            </div>
+            <!--<div class="ui input editArea">-->
+              <!--<input type="text" :value="collection.name">-->
+            <!--</div>-->
             <p class="infoArea">{{ collection.name }}</p>
             <h2>Time</h2>
-            <div class="ui input editArea">
-              <input type="text" :value="collection.time" v-model="collection.time">
-            </div>
+            <!--<div class="ui input editArea">-->
+              <!--<input type="text" :value="collection.time">-->
+            <!--</div>-->
             <p class="infoArea">{{ collection.time }}</p>
             <h2>Owner</h2>
-            <div class="ui input editArea">
-              <input type="text" :value="collection.owner" v-model="collection.owner">
-            </div>
+            <!--<div class="ui input editArea">-->
+              <!--<input type="text" :value="collection.owner">-->
+            <!--</div>-->
             <p class="infoArea">{{ collection.owner }}</p>
             <h2>Description</h2>
             <div class="ui comments editArea" >
@@ -56,7 +60,7 @@
             <i class="write square icon yellow big"></i> Edit
           </div>
           <div id="save">
-            <i class="checkmark box icon green big"></i> Save
+            <i class="checkmark box icon green big"></i> Submit
           </div>
         </div>
         <div class="ui horizontal section divider">You may like</div>
@@ -100,6 +104,7 @@
           description: "The history and authors of Russian literature.",
           owner: "Museum-Reserve of A.S Pushkin"
         },
+        originDes: "",
         recommendations: [
           {
             name: "Masonic apron",
@@ -133,15 +138,18 @@
     },
     mounted: function () {
       this.$nextTick(function () {
+
         $('#save').hide();
         $('.editArea').hide();
         $('#save').click(function () {
+
           $('#save').hide();
           $('#edit').show();
           $('.editArea').hide();
           $('.infoArea').show();
         });
         $('#edit').click(function () {
+
             $('#edit').hide();
             $('#save').show();
           $('.editArea').show();

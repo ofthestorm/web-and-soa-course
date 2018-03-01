@@ -68,3 +68,33 @@ The way to parse data: Use JQuery to transform the JSON data into javascript obj
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fl9hmmzu27j31kw11d1kz.jpg)
 
+# Assignment 2: 
+### Requirement analysis
+
+With people‘s increasing demand of spirit and culture, the market of culture becomes unprecedentedly prosperous. As we can see, a lot of websites like IMDB, Rotten Tomatoes, last.fm has provided information about movies and musics in high quality, and domestic websites like douban has additional resources about books, live shows, exhibitions and etc. In the meanwhile, we find that there is lack of platforms aimed at museums. It’s hard for museum fans to get the latest information, access niche but interesting museums and share their opinion and knowledge with other fans. 
+
+#### Functional requirements
+
+In this case, our goal is to provide services associated with museums. The target population are museum fans and museums. We design different functions according to different user roles.
+
+All accounts can register then log in. They can receive messages as well.
+
+- **Museum account**
+
+1. Create museum homepage, add collections in museum, supply detail information about the museum and collections.
+2. Publish posts. The posts may related with latest exhibitions, recruiting volunteers and etc.
+3. Check wiki submitted by users. Museum can choose to receive the wiki if it is valuable or refuse it if not.
+
+- **User**
+
+1. Browse information of museums and collections.
+2. Look over comments and scores of others and add comments and scores by his or her own.
+3. Read posts. 
+4. Submit wiki of collections if they have professional research or folk stories on them.
+
+![](https://ws3.sinaimg.cn/large/006tNc79ly1fngdhckblej31au0okjvh.jpg)
+
+### Architecture
+![](https://ws4.sinaimg.cn/large/006tNc79ly1foxmz3no7dj31ch0rljyu.jpg)
+
+To be continued...

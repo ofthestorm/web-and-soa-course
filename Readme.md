@@ -68,7 +68,7 @@ The way to parse data: Use JQuery to transform the JSON data into javascript obj
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fl9hmmzu27j31kw11d1kz.jpg)
 
-# Assignment 2: 
+# Assignment 2: Project with microservice
 ### Requirement analysis
 
 With people‘s increasing demand of spirit and culture, the market of culture becomes unprecedentedly prosperous. As we can see, a lot of websites like IMDB, Rotten Tomatoes, last.fm has provided information about movies and musics in high quality, and domestic websites like douban has additional resources about books, live shows, exhibitions and etc. In the meanwhile, we find that there is lack of platforms aimed at museums. It’s hard for museum fans to get the latest information, access niche but interesting museums and share their opinion and knowledge with other fans. 
